@@ -5,11 +5,11 @@ import githubLogo from 'public/images/github-mark-white.svg';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
+    { linkText: 'Revalidaciones', href: '/revalidation' },
+    { linkText: 'Imagen CDN', href: '/image-cdn' },
+    { linkText: 'Funciones Edge', href: '/edge' },
     { linkText: 'Blobs', href: '/blobs' },
-    { linkText: 'Classics', href: '/classics' }
+    { linkText: 'Clasicos', href: '/classics' }
 ];
 
 export function Header() {
