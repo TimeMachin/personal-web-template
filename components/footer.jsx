@@ -6,6 +6,11 @@ export function Footer() {
     return (
         <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16">
             <p className="text-sm">
+                <Balatro
+                    isRotate={false}
+                    mouseInteraction={true}
+                    pixelFilter={700}
+                />
                 <div style={{ width: '100%', height: '600px', position: 'relative' }}>
                     <Prism
                         animationType="rotate"
@@ -25,11 +30,6 @@ export function Footer() {
                 >
                     Next.js on Netlify
                 </Link>
-                <Balatro
-                isRotate={false}
-                mouseInteraction={true}
-                pixelFilter={700}
-                />
             </p>
         </footer>
     );
