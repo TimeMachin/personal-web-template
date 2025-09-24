@@ -1,18 +1,11 @@
 import Link from 'next/link';
 import Prism from './Prism';
-import Balatro from './Balatro';
 
 export function Footer() {
     return (
         <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16">
             <p className="text-sm">
-                <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-                    <Balatro
-                        isRotate={false}
-                        mouseInteraction={true}
-                        pixelFilter={700}
-                    />
-                </div>
+
                 <div style={{ width: '100%', height: '600px', position: 'relative' }}>
                     <Prism
                         animationType="rotate"
