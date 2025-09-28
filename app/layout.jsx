@@ -4,6 +4,7 @@ import { Header } from '../components/header';
 import LetterGlitch from '../components/LetterGlitch';
 import { fixedSize } from './blobs/generator';
 import Navbar from 'components/navbar';
+import SpotlightCard from 'components/SpotlightCard';
 
 export const metadata = {
     title: {
@@ -28,12 +29,6 @@ export default function RootLayout({ children }) {
                         smooth={true}
                     />
                 </div>
-
-
-
-
-
-
 
                 <a href="https://wa.me/34687093223/" target="_blank" className="fixed bottom-4 right-4 z-50">
                     <img src="https://ebweb.es/wp-content/uploads/2020/09/logo-wasap.png" width="50" height="50" alt="Whatsapp logo"/>

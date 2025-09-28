@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between 
                         bg-white/10 backdrop-blur-md 
-                        rounded-2xl shadow-lg 
+                        rounded-4xl shadow-lg 
                         px-6 py-3 
                         border border-white/50">
           
