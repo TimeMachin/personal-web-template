@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
                         <main className="grow">{children}</main>
                         <Footer />
                         <a href="https://wa.me/34687093223/?text=tu%20texto%20personalizado" target="_blank">
-                            <Image src="https://ebweb.es/wp-content/uploads/2020/09/logo-wasap.png" width="50" height="50"></Image>
+                            <img src="https://ebweb.es/wp-content/uploads/2020/09/logo-wasap.png" width="50" height="50"/>
                         </a>
                     </div>
                 </div>
