@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import Prism from './Prism';
+import LetterGlitch from './LetterGlitch';
 
 export function Footer() {
     return (
         <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16">
             <p className="text-sm">
 
-                <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-                    <Prism
+                <div>
+{/*                     <Prism
                         animationType="rotate"
                         timeScale={0.5}
                         height={3.5}
@@ -17,6 +18,12 @@ export function Footer() {
                         colorFrequency={1}
                         noise={0.5}
                         glow={1}
+                    /> */}
+                    <LetterGlitch
+                        glitchSpeed={50}
+                        centerVignette={true}
+                        outerVignette={false}
+                        smooth={true}
                     />
                 </div>
                 <Link
