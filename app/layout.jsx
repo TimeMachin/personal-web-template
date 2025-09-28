@@ -5,7 +5,7 @@ import { Header } from '../components/header';
 export const metadata = {
     title: {
         template: '%s | Netlify',
-        default: 'Netlify Starter'
+        default: 'Pedro Personal Site'
     }
 };
 
@@ -21,6 +21,9 @@ export default function RootLayout({ children }) {
                         <Header />
                         <main className="grow">{children}</main>
                         <Footer />
+                        <a href="https://wa.me/34687093223/?text=tu%20texto%20personalizado" target="_blank">
+                            <Image src="https://ebweb.es/wp-content/uploads/2020/09/logo-wasap.png" width="50" height="50"></Image>
+                        </a>
                     </div>
                 </div>
             </body>
