@@ -19,12 +19,7 @@ export function Footer() {
                         noise={0.5}
                         glow={1}
                     /> */}
-                    <LetterGlitch
-                        glitchSpeed={50}
-                        centerVignette={true}
-                        outerVignette={false}
-                        smooth={true}
-                    />
+
                 </div>
                 <Link
                     href="https://kinsta.com/es/base-de-conocimiento/next-js/"
