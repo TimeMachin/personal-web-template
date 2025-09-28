@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
 
 
                     <nav className="sticky top-4 z-50">
-                        <div className="max-w-6xl mx-auto px-4">
+                        <div className="max-w-6xl mx-auto px-4" style={{paddingTop: "25px"}}>
                             <div className="flex items-center justify-between 
                                             bg-white/10 backdrop-blur-md 
                                             rounded-4xl shadow-lg 
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
 
 
 
-                    <a href="https://wa.me/34687093223/" target="_blank">
+                    <a href="https://wa.me/34687093223/" target="_blank" className="fixed bottom-4 right-4 z-50">
                         <img src="https://ebweb.es/wp-content/uploads/2020/09/logo-wasap.png" width="50" height="50" alt="Whatsapp logo"/>
                     </a>
 
