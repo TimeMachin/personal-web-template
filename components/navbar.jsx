@@ -5,13 +5,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-4 z-50" style={{paddingTop: "25px"}}>
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between 
-                        bg-white/10 backdrop-blur-md 
-                        rounded-4xl shadow-lg 
-                        px-6 py-3 
-                        border border-white/50">
+    <nav>
+      <div>
+        <div className="flex items-center justify-between">
           
           {/* Logo */}
           <div className="text-2xl font-bold text-white">Pedro Rodriguez Treviño</div>
@@ -41,7 +37,7 @@ export default function Navbar() {
             isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg border border-white/50 px-4 py-3 space-y-2">
+          <div className="bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/50 px-4 py-3 space-y-2">
             <a href="#about" className="block text-white hover:text-gray-300 no-underline font-semibold">About</a>
             <a href="#experience" className="block text-white hover:text-gray-300 no-underline font-semibold">Experience</a>
             <a href="#education" className="block text-white hover:text-gray-300 no-underline font-semibold">Education</a>
