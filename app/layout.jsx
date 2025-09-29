@@ -1,7 +1,7 @@
 import '../styles/globals.css';
-import { Footer } from '../components/footer';
-import { Header } from '../components/header';
 import LetterGlitch from '../components/LetterGlitch';
+import FadeContent from 'components/animations/fade';
+import ContactStack from 'components/contactsStack';
 import { fixedSize } from './blobs/generator';
 import Navbar from 'components/navbar';
 import SpotlightCard from 'components/SpotlightCard';
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
             <body >
-                <Navbar></Navbar>
+                {/* Seccion de configuracion de fondo de pagina */}
                 <div className='bg-letterglitch'>
                     <LetterGlitch
                         glitchSpeed={10}
@@ -30,9 +30,17 @@ export default function RootLayout({ children }) {
                     />
                 </div>
 
-                <a href="https://wa.me/34687093223/" target="_blank" className="fixed bottom-4 right-4 z-50">
-                    <img src="https://ebweb.es/wp-content/uploads/2020/09/logo-wasap.png" width="50" height="50" alt="Whatsapp logo"/>
-                </a>
+                {/* Seccion de barra de navegacion */}
+                <div>
+                    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+                        <Navbar></Navbar>
+                    </FadeContent>
+                </div>
+
+                {/* Seccion de rueda de contactos en parte inferior derecha */}
+                <div className="fixed bottom-4 right-4 z-50">
+                    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}><ContactStack></ContactStack></FadeContent>
+                </div>
             </body>
         </html>
     );
