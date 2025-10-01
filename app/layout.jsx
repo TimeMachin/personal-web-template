@@ -1,12 +1,24 @@
 import '../styles/globals.css';
+
+{/* Imports de animaciones */}
 import LetterGlitch from '../components/LetterGlitch';
 import FadeContent from 'components/animations/fade';
+import TextType from 'components/animations/textType';
+
+
+{/* Imports de componentes */}
 import ContactStack from 'components/contactsStack';
 import Navbar from 'components/navbar';
 import GradualBlurMemo from 'components/animations/GradualBlur ';
-import TextType from 'components/animations/textType';
 import SpotlightCard from 'components/SpotlightCard';
+
+{/* Imports de contenido */}
 import Hero from 'components/portafolio/Hero';
+import Experience from 'components/portafolio/experience';
+import Education from 'components/portafolio/Education';
+import Projects from 'components/portafolio/Projects';
+import Contacts from 'components/portafolio/Contacts';
+import CoverLetter from 'components/portafolio/CoverLetter';
 
 export const metadata = {
     title: {
@@ -33,24 +45,43 @@ export default function RootLayout({ children }) {
                 </div>
 
                 {/* Seccion de barra de navegacion */}
-                <div className='backdrop-blur-md sticky top-4 z-50 max-w-6xl mx-auto px-4 bg-white/10 rounded-4xl shadow-lg px-6 py-3 border border-white/50 my-5'>
+                <div className='backdrop-blur-md fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-6xl w-full px-4 bg-white/10 rounded-4xl shadow-lg px-6 py-3 border border-white/50'>
                     <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
                         <Navbar></Navbar>
                     </FadeContent>
                 </div>
 
                 {/* Seccion de contenido */}
-                <div className='middle-position'>
+                <section id='about' className='mt-25'>
                     <Hero></Hero>
-                </div>
+                </section>
+
+                <section id='experience' className='text-white'>
+                    <Experience></Experience>
+                </section>
+
+                <section id='education' className='text-white'>
+                    <Education></Education>
+                </section>
+
+                <section id='projects' className='text-white'>
+                    <Projects></Projects>
+                </section>
+
+                <section id='contact' className='text-white mb-20'>
+                    <Contacts></Contacts>
+                </section>
+
+
+
 
                 {/* Seccion de rueda de contactos en parte inferior derecha */}
-                <div className="fixed bottom-4 right-4 z-50">
+                <div className="fixed bottom-4 right-4 z-2">
                     <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}><ContactStack></ContactStack></FadeContent>
                 </div>
 
                 {/* Seccion de blur inferior */}
-                <div className='bg-letterglitch'>
+                <div className='bg-letterglitch z-1'>
                     <GradualBlurMemo
                         target="page"
                         position="bottom"

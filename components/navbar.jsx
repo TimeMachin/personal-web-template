@@ -25,14 +25,13 @@ export default function Navbar() {
             <a href="#about" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">About</a>
             <a href="#experience" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Experience</a>
             <a href="#education" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Education</a>
-            <a href="#skills" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Skills</a>
             <a href="#projects" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Projects</a>
             <a href="#contact" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Contact</a>
           </div>
 
           {/* Botón menú mobile */}
           <button 
-            className="md:hidden text-white text-2xl" 
+            className="md:hidden text-white text-2xl cursor-pointer hover:scale-110" 
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? "✖" : "☰"}
@@ -46,12 +45,11 @@ export default function Navbar() {
           }`}
         >
           <div className="bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/50 px-4 py-3 space-y-2">
-            <a href="#about" className="block text-white hover:text-gray-300 no-underline font-semibold">About</a>
-            <a href="#experience" className="block text-white hover:text-gray-300 no-underline font-semibold">Experience</a>
-            <a href="#education" className="block text-white hover:text-gray-300 no-underline font-semibold">Education</a>
-            <a href="#skills" className="block text-white hover:text-gray-300 no-underline font-semibold">Skills</a>
-            <a href="#projects" className="block text-white hover:text-gray-300 no-underline font-semibold">Projects</a>
-            <a href="#contact" className="block text-white hover:text-gray-300 no-underline font-semibold">Contact</a>
+            <a href="#about" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">About</a>
+            <a href="#experience" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Experience</a>
+            <a href="#education" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Education</a>
+            <a href="#projects" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Projects</a>
+            <a href="#contact" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Contact</a>
           </div>
         </div>
       </div>
