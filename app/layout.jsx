@@ -14,7 +14,7 @@ import SpotlightCard from 'components/SpotlightCard';
 
 {/* Imports de contenido */}
 import Hero from 'components/portafolio/Hero';
-import Experience from 'components/portafolio/experience';
+import Experience from 'components/portafolio/Experience';
 import Education from 'components/portafolio/Education';
 import Projects from 'components/portafolio/Projects';
 import Contacts from 'components/portafolio/Contacts';
@@ -52,11 +52,11 @@ export default function RootLayout({ children }) {
                 </div>
 
                 {/* Seccion de contenido */}
-                <section id='about' className='mt-25'>
+                <section id='about' className='mt-20 py-12 md:py-16 lg:py-24'>
                     <Hero></Hero>
                 </section>
 
-                <section id='experience' className='text-white'>
+                <section id='experience' className='bg-white/10 py-12 md:py-16'>
                     <Experience></Experience>
                 </section>
 
