@@ -6,6 +6,7 @@ import Navbar from 'components/navbar';
 import GradualBlurMemo from 'components/animations/GradualBlur ';
 import TextType from 'components/animations/textType';
 import SpotlightCard from 'components/SpotlightCard';
+import Hero from 'components/portafolio/Hero';
 
 export const metadata = {
     title: {
@@ -32,23 +33,16 @@ export default function RootLayout({ children }) {
                 </div>
 
                 {/* Seccion de barra de navegacion */}
-                <div className='backdrop-blur-md sticky top-4 z-50 max-w-6xl mx-auto px-4 bg-white/10 rounded-4xl shadow-lg px-6 py-3 border border-white/50'>
+                <div className='backdrop-blur-md sticky top-4 z-50 max-w-6xl mx-auto px-4 bg-white/10 rounded-4xl shadow-lg px-6 py-3 border border-white/50 my-5'>
                     <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
                         <Navbar></Navbar>
                     </FadeContent>
                 </div>
 
                 {/* Seccion de contenido */}
-                <section className="text-2xl font-bold text-white">
-                    <TextType 
-                        text={["\nWork under construction", "\nPlease wait", "\nPlease stand by", "\nCada vez mas basado", "\nNo black people, please", "\nHola slenderman"]}
-                        typingSpeed={50}
-                        pauseDuration={1500}
-                        showCursor={true}
-                        cursorCharacter="_"
-                    />
-                </section>
-
+                <div className='middle-position'>
+                    <Hero></Hero>
+                </div>
 
                 {/* Seccion de rueda de contactos en parte inferior derecha */}
                 <div className="fixed bottom-4 right-4 z-50">
@@ -60,10 +54,10 @@ export default function RootLayout({ children }) {
                     <GradualBlurMemo
                         target="page"
                         position="bottom"
-                        height="6rem"
-                        strength={2}
+                        height="5rem"
+                        strength={1}
                         divCount={5}
-                        curve="bezier"
+                        curve="ease-in"
                         exponential={true}
                         opacity={1}
                     />

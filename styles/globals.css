@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -164,5 +164,34 @@
         z-index: -1;       /* Se queda atrás */
         overflow: hidden;  /* Evita scroll raro */
         opacity: 1;
+    }
+
+    .middle-position {
+        position: absolute;
+        z-index: -1;       /* Se queda atrás */
+    }
+
+    .quantico-regular {
+        font-family: "Quantico", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    .quantico-bold {
+        font-family: "Quantico", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    .quantico-regular-italic {
+        font-family: "Quantico", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    .quantico-bold-italic {
+        font-family: "Quantico", sans-serif;
+        font-weight: 700;
+        font-style: italic;
     }
 }

@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <div className="text-2xl font-bold text-white">Pedro Rodriguez Treviño</div>
+          <div className="text-2xl font-bold text-white">
+            <Image
+                src="/images/ibm-logo.svg"
+                width={50}
+                height={50}
+                alt="Contact"
+            />
+          </div>
 
           {/* Links desktop */}
           <div className="hidden md:flex space-x-8">
