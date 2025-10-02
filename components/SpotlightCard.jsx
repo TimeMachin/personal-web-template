@@ -40,7 +40,7 @@ const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(203, 1
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative backdrop-blur-md border border-white/50 overflow-hidden ${className}`}
+      className={`overflow-hidden ${className}`}
       style={{ height: '100%' }} // 💥 fuerza que se estire verticalmente
     >
       <div

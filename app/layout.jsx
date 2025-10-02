@@ -51,12 +51,12 @@ export default function RootLayout({ children }) {
                     </FadeContent>
                 </div>
 
-                {/* Seccion de contenido */}
+                {/* Seccion de contenido       bg-white/10 */}
                 <section id='about' className='mt-20 py-12 md:py-16 lg:py-24'>
                     <Hero></Hero>
                 </section>
 
-                <section id='experience' className='bg-white/10 py-12 md:py-16'>
+                <section id='experience' className='py-6 md:py-8 flex items-center justify-center'>
                     <Experience></Experience>
                 </section>
 
