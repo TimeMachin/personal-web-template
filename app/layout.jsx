@@ -1,16 +1,18 @@
 import '../styles/globals.css';
+import '../styles/lightfall.css';
 
 {/* Imports de animaciones */}
-import LetterGlitch from '../components/LetterGlitch';
+import LetterGlitch from '../components/backgrounds/LetterGlitch';
 import FadeContent from 'components/animations/fade';
 import TextType from 'components/animations/textType';
-
+import Lightfall from 'components/backgrounds/Lightfall';
 
 {/* Imports de componentes */}
 import ContactStack from 'components/contactsStack';
 import Navbar from 'components/navbar';
 import GradualBlurMemo from 'components/animations/GradualBlur ';
 import SpotlightCard from 'components/SpotlightCard';
+import Framer from 'components/Framer';
 
 {/* Imports de contenido */}
 import Hero from 'components/portafolio/Hero';
@@ -36,12 +38,14 @@ export default function RootLayout({ children }) {
             <body>
                 {/* Seccion de configuracion de fondo de pagina */}
                 <div className='bg-letterglitch fixed'>
-                    <LetterGlitch
+{/*                     <LetterGlitch
                         glitchSpeed={10}
                         centerVignette={true}
                         outerVignette={true}
                         smooth={true}
-                    />
+                    /> */}
+                    <Lightfall/>
+
                 </div>
 
                 {/* Seccion de barra de navegacion */}
@@ -61,7 +65,7 @@ export default function RootLayout({ children }) {
                 </section>
 
                 <section id='education' className='text-white'>
-                    <Education></Education>
+                    <Framer />
                 </section>
 
                 <section id='projects' className='text-white'>
@@ -71,8 +75,6 @@ export default function RootLayout({ children }) {
                 <section id='contact' className='text-white mb-20'>
                     <Contacts></Contacts>
                 </section>
-
-
 
 
                 {/* Seccion de rueda de contactos en parte inferior derecha */}

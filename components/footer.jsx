@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Prism from './Prism';
-import LetterGlitch from './LetterGlitch';
+import LetterGlitch from './backgrounds/LetterGlitch';
 
 export function Footer() {
     return (

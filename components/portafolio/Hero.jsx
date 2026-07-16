@@ -28,11 +28,10 @@ const Hero = ({}) => {
                 </div>
                 <div className="flex items-center justify-center p-2">
                     <p className="text-start text-white quantico-regular text-xl">
-                        Me apasionan las expresiones artísticas, particularmente el dibujo y la fotografía, tanto en la captura de imágenes como en su edición 
-                        mediante software profesional. También disfruto aprendiendo nuevos idiomas y actualmente estoy estudiando japonés. Además, me 
-                        gusta practicar una variedad de deportes, aunque no sigo ninguno en concreto como forma de entretenimiento. Profesional en desarrollo 
-                        de software y máster en Ciberseguridad, con foco en Análisis Forense Digital y Operaciones de Seguridad (SOC). Experiencia reciente en 
-                        uso de herramientas y metodologías SOC para detección, análisis y respuesta a incidentes.     
+                        I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on 
+                        backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with 
+                        a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative 
+                        environments where communication, precision, and analytical thinking drive impactful solutions.
                     </p>
                 </div>
             </div>
