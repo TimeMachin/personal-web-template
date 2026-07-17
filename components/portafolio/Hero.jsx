@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TextType from "components/animations/textType";
+import PixelHover from "components/animations/PixelHover";
 
 const Hero = ({}) => {
     return (
@@ -8,11 +9,9 @@ const Hero = ({}) => {
                 <div className="flex items-center justify-center">
                     <div className="grid grid-cols-1 divide-yw-23/24">
                         <div className="flex items-center justify-center">
-                            <Image
-                                src="/images/hacker.jpg"
-                                width={500}
-                                height={500}
-                                alt="Contact"
+                            <PixelHover
+                                image="/images/hacker.jpg"
+
                             />
                         </div>
                         <div className="text-4xl quantico-bold text-white">
