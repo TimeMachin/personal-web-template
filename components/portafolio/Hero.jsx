@@ -10,7 +10,7 @@ const Hero = ({}) => {
                     <div className="grid grid-cols-1 divide-yw-23/24">
                         <div className="flex items-center justify-center">
                             <PixelHover
-                                image="/images/hacker.jpg"
+                                image="/images/profile.png"
 
                             />
                         </div>
