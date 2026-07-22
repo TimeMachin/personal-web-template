@@ -1,11 +1,16 @@
 import '../styles/globals.css';
 import '../styles/lightfall.css';
+import '../styles/faultyTerminal.css';
+
+{/* Imports de Fondos */}
+import Lightfall from 'components/backgrounds/Lightfall';
+import DotMatrix from 'components/backgrounds/DotMatrix';
+import LetterGlitch from '../components/backgrounds/LetterGlitch';
+import Waves from 'components/backgrounds/Waves';
 
 {/* Imports de animaciones */}
-import LetterGlitch from '../components/backgrounds/LetterGlitch';
 import FadeContent from 'components/animations/fade';
 import TextType from 'components/animations/textType';
-import Lightfall from 'components/backgrounds/Lightfall';
 
 {/* Imports de componentes */}
 import ContactStack from 'components/contactsStack';
@@ -26,6 +31,10 @@ import CoverLetter from 'components/portafolio/CoverLetter';
 import { FadeIn } from 'components/animations/FadeIn'; // Este componente crea un div que se anima al hacer scroll, usando framer-motion con un efecto de aparecer
 import ScrollProgress from 'components/animations/ScrollProgress'; // Este componente crea una barra de progreso que indica el porcentaje de scroll de la pagina, usando framer-motion
 
+{/* API Calls */}
+import { getUsers } from 'src/lib/api/users';
+import { getQuotes } from 'src/lib/api/quotes';
+import FaultyTerminal from 'components/backgrounds/FaultyTerminal';
 
 export const metadata = {
     title: {
@@ -34,7 +43,9 @@ export const metadata = {
     }
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+    const quotes = await getQuotes();
+    console.log('Quotes:', quotes);
     return (
         <html lang="en">
             <head>
@@ -49,7 +60,10 @@ export default function RootLayout({ children }) {
                         outerVignette={true}
                         smooth={true}
                     /> */}
-                    <Lightfall/>
+                    {/* <Lightfall/> */}
+                    <DotMatrix/>
+                    {/* <FaultyTerminal/> */}
+                    {/* <Waves /> */}
 
                 </div>
 
@@ -59,6 +73,10 @@ export default function RootLayout({ children }) {
                 {/* Seccion de contenido       bg-white/10 */}
                 <section id='about' className='mt-20 py-12 md:py-16 lg:py-24'>
                     <Hero></Hero>
+                </section>
+
+                <section id='inspiration' className='py-2 md:py-8 flex items-center justify-right'>
+                    <p className="text-white text-lg mt-4">{quotes[0].q} — {quotes[0].a}</p>
                 </section>
 
                 <section id='experience' className='py-6 md:py-8 flex items-center justify-center'>
@@ -75,7 +93,6 @@ export default function RootLayout({ children }) {
                     >
                         <p className="text-white text-xl">Fade In animations testing</p>
                     </FadeIn>
-                    <ScrollProgress></ScrollProgress>
                 </section>
 
                 <section id='education' className='text-white'>
