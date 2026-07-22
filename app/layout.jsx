@@ -22,6 +22,11 @@ import Projects from 'components/portafolio/Projects';
 import Contacts from 'components/portafolio/Contacts';
 import CoverLetter from 'components/portafolio/CoverLetter';
 
+{/* Scroll de triggers (BETA) */}
+import { FadeIn } from 'components/animations/FadeIn'; // Este componente crea un div que se anima al hacer scroll, usando framer-motion con un efecto de aparecer
+import ScrollProgress from 'components/animations/ScrollProgress'; // Este componente crea una barra de progreso que indica el porcentaje de scroll de la pagina, usando framer-motion
+
+
 export const metadata = {
     title: {
         template: '%s | Netlify',
@@ -49,11 +54,7 @@ export default function RootLayout({ children }) {
                 </div>
 
                 {/* Seccion de barra de navegacion */}
-                <div className='backdrop-blur-md fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-6xl w-full px-4 bg-white/10 rounded-4xl shadow-lg px-6 py-3 border border-white/50'>
-                    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-                        <Navbar></Navbar>
-                    </FadeContent>
-                </div>
+                <Navbar></Navbar>
 
                 {/* Seccion de contenido       bg-white/10 */}
                 <section id='about' className='mt-20 py-12 md:py-16 lg:py-24'>
@@ -64,8 +65,21 @@ export default function RootLayout({ children }) {
                     <Experience></Experience>
                 </section>
 
+                <section id='scroll' className='text-white'>
+                    <FadeIn
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ amount: 'all', once: false }}
+                        className="bg-blue-500"
+                    >
+                        <p className="text-white text-xl">Fade In animations testing</p>
+                    </FadeIn>
+                    <ScrollProgress></ScrollProgress>
+                </section>
+
                 <section id='education' className='text-white'>
-                    <Framer />
+                    <Framer/>
                 </section>
 
                 <section id='projects' className='text-white'>
@@ -75,7 +89,6 @@ export default function RootLayout({ children }) {
                 <section id='contact' className='text-white mb-20'>
                     <Contacts></Contacts>
                 </section>
-
 
                 {/* Seccion de rueda de contactos en parte inferior derecha */}
                 <div className="fixed bottom-4 right-4 z-2">
