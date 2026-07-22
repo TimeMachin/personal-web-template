@@ -5,7 +5,7 @@ const BASE_URL = process.env.API_BASE_URL ?? "https://jsonplaceholder.typicode.c
 export async function getUsers(): Promise<User[]> {
   const res = await fetch(`${BASE_URL}/users`, {
     // Revalida cada hora (ajusta según necesidad)
-    next: { revalidate: 3600 },
+    cache: 'no-store',
   });
 
   if (!res.ok) {

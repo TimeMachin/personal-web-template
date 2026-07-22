@@ -5,7 +5,7 @@ const BASE_URL = process.env.API_BASE_URL ?? "https://zenquotes.io/api/random";
 export async function getQuotes(): Promise<Quote[]> {
   const res = await fetch(`${BASE_URL}`, {
     // Revalida cada 5 segundos (ajusta según necesidad)
-    next: { revalidate: 5 },
+    cache: 'no-store',
   });
 
   if (!res.ok) {
