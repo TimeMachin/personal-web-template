@@ -199,6 +199,9 @@
         font-style: italic;
     }
 
+    .tryingnav, .headline { font-family: "Times Now SemiBold Italic", "Times Now SemiBold Italic Placeholder", sans-serif; }
+    .nav, .buttonContact, .subtitle { font-family: var(--font-inter), sans-serif; }
+
     /* ELEMENTS STYLES - CARDS*/
     .book {
     position: relative;

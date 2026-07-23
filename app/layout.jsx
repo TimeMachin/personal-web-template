@@ -1,3 +1,4 @@
+{/* Imports de Estilos */}
 import '../styles/globals.css';
 import '../styles/lightfall.css';
 import '../styles/faultyTerminal.css';
@@ -44,8 +45,8 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-    const quotes = await getQuotes();
-    console.log('Quotes:', quotes);
+/*     const quotes = await getQuotes();
+    console.log('Quotes:', quotes); */
     return (
         <html lang="en">
             <head>
@@ -54,29 +55,19 @@ export default async function RootLayout({ children }) {
             <body>
                 {/* Seccion de configuracion de fondo de pagina */}
                 <div className='bg-letterglitch fixed'>
-{/*                     <LetterGlitch
-                        glitchSpeed={10}
-                        centerVignette={true}
-                        outerVignette={true}
-                        smooth={true}
-                    /> */}
-                    {/* <Lightfall/> */}
                     <DotMatrix/>
-                    {/* <FaultyTerminal/> */}
-                    {/* <Waves /> */}
-
                 </div>
 
                 {/* Seccion de barra de navegacion */}
                 <Navbar></Navbar>
 
                 {/* Seccion de contenido       bg-white/10 */}
-                <section id='about' className='mt-20 py-12 md:py-16 lg:py-24'>
+                <section id='about' className='py-1 md:py-1 lg:py-8'>
                     <Hero></Hero>
                 </section>
 
                 <section id='inspiration' className='py-2 md:py-8 flex items-center justify-right'>
-                    <p className="text-white text-lg mt-4">{quotes[0].q} — {quotes[0].a}</p>
+                    {/* <p className="text-white text-lg mt-4">{quotes[0].q} — {quotes[0].a}</p> */}
                 </section>
 
                 <section id='experience' className='py-6 md:py-8 flex items-center justify-center'>
