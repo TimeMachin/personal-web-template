@@ -1,22 +1,72 @@
-import Image from "next/image";
+'use client'
+
+// Import de fuentes
+import { newsreader, inter, fraunces, ebGaramond } from "../fonts";
+
+// Import de animaciones
 import TextType from "components/animations/textType";
 import PixelHover from "components/animations/PixelHover";
-import { newsreader, inter } from "../fonts";
+import BlurText from "components/animations/BlurTextFall";
+import FadeContent from "components/animations/fade";
+
+// Otras librerias
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
 
 const Hero = ({}) => {
+    // Reloj
+    const [time, setTime] = useState("");
+    useEffect(() => {
+        const updateTime = () => {
+            const now = new Date();
+            setTime(
+                now.toLocaleTimeString([], { 
+                    hour: "2-digit", 
+                    minute: "2-digit",
+                    hour12: true 
+                })
+            );
+        };
+        updateTime();
+        const interval = setInterval(updateTime, 60000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section>
-            <div className="md:w-full lg:w-93/96 items-center justify-center mx-auto flex flex-col md:flex-row gap-4 md:gap-8"> 
-                <img src="/images/edited_small_hand.png" className="rounded-xl" />
+            <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}>
+            <div className="relative min-h-screen w-full overflow-hidden">
+                <div className="absolute inset-0 z-0 md:w-93/96 lg:w-93/96 items-center justify-center mx-auto flex flex-col md:flex-row gap-4 md:gap-8"> 
+                    <img 
+                        src="/images/edited_small_hand.png" 
+                        className="rounded-xl select-none pointer-events-none" 
+                    />
+                </div>
+                
+                <div className="relative z-10 text-centerrelative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
+                    <BlurText
+                        text="Imagine a space"
+                        delay={50}
+                        animateBy="letters"
+                        direction="top"
+                        className={`${ebGaramond.className} glow text-5xl font-light tracking-tight leading-tight text-white`}
+                    />
+                </div>
+                <div className="absolute bottom-10 left-5 right-5 z-10 flex items-center justify-between px-8 py-6 text-white/60 text-m">
+                    <BlurText text={time} delay={100} animateBy="letters" direction="bottom" className={`${fraunces.className}`}/>
+                    <BlurText text="Scroll to Explore" delay={300} animateBy="words" direction="bottom" className={`${fraunces.className} glow`}/>
+                    <BlurText text="Madrid, Spain" delay={100} animateBy="letters" direction="bottom" className={`${fraunces.className}`}/>
+                </div>
             </div>
+            </FadeContent>
             <div className="mt-10 flex items-center justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-x w-11/12">
                     <div className="flex items-center justify-center">
-                        <div className="grid grid-cols-1 divide-yw-23/24">
+                        <div className="grid grid-cols-1 divide-y w-23/24">
                             <div className="flex items-center justify-center">
                                 <PixelHover
                                     image="/images/profile.png"
-
                                 />
                             </div>
                             <div className="text-4xl quantico-bold text-white">

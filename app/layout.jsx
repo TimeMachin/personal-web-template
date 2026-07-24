@@ -14,7 +14,6 @@ import FadeContent from 'components/animations/fade';
 import TextType from 'components/animations/textType';
 
 {/* Imports de componentes */}
-import ContactStack from 'components/contactsStack';
 import Navbar from 'components/navbar';
 import GradualBlurMemo from 'components/animations/GradualBlur ';
 import SpotlightCard from 'components/SpotlightCard';
@@ -60,9 +59,9 @@ export default async function RootLayout({ children }) {
 
                 {/* Seccion de barra de navegacion */}
                 <Navbar></Navbar>
-
+                
                 {/* Seccion de contenido       bg-white/10 */}
-                <section id='about' className='py-1 md:py-1 lg:py-8'>
+                <section id='about'>
                     <Hero></Hero>
                 </section>
 
@@ -100,7 +99,7 @@ export default async function RootLayout({ children }) {
 
                 {/* Seccion de rueda de contactos en parte inferior derecha */}
                 <div className="fixed bottom-4 right-4 z-2">
-                    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}><ContactStack></ContactStack></FadeContent>
+                    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}></FadeContent>
                 </div>
 
                 {/* Seccion de blur inferior */}

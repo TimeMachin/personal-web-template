@@ -318,7 +318,7 @@ function buildGlyphAtlas(
 }
 
 const MAX_COLORS = 10;
-const DEFAULT_COLORS = ["#0BCCFF", "#65FD2F", "#000000"];
+const DEFAULT_COLORS = ["#0BCCFF", "#358815", "#000000"];
 
 function buildPaletteUniforms(colorList: string[]) {
     const rgb: [number, number, number][] = [];
@@ -359,8 +359,8 @@ export default function DottedBackground({
     bgColor = "#000000",
     colors,
     cellSize = 1,
-    gamma = 7,
-    paletteBias = 10,
+    gamma = 8,
+    paletteBias = 15,
     style,
     useGlyphAtlas = false,
     characters = DEFAULT_CHARACTERS,

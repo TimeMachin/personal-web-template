@@ -268,3 +268,27 @@
     margin-left: 20%;
     }
 }
+
+
+/* GLOW*/
+.glow {
+  text-shadow: 
+    0 0 1px #ffffff, /* Pink glow */
+    0 0 1px #ffffff,
+    0 0 1px #ffffff,
+    0 0 1px #ffffff;
+  animation: glow-animation 3s infinite alternate; /* Animation */
+}
+
+@keyframes glow-animation {
+  from {
+    text-shadow: 
+    0 0 1px #ffffff,
+    0 0 1px #ffffff,
+  }
+  to {
+    text-shadow: 
+    0 0 2px #ffffff,
+    0 0 2px #ffffff,
+  }
+}

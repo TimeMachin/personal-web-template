@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import {motion, useScroll, useTransform } from 'framer-motion';
 import FadeContent from "./animations/fade";
-import { newsreader, inter } from "./fonts";
+import { newsreader, inter, fraunces, ebGaramond } from "./fonts";
 
 export default function Navbar() {
   // State to manage the mobile menu toggle
@@ -24,51 +24,54 @@ export default function Navbar() {
   // Render the navbar
   return (
     <div className="fixed z-50 w-full">
-      <motion.div style={{ width: widthS }} className='top-11 backdrop-blur-md fixed  left-1/2 transform -translate-x-1/2 px-4 bg-white/10 rounded-2xl shadow-lg px-6 py-2 border border-white/20'>
-        <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-          <nav>
-            <div>
-              <div className="flex items-center justify-between">
-                
-                {/* Logo */}
-                <div>
-                  <a href="#" className={`${newsreader.className} text-2xl italic text-[#f3e9e2]`} style={{ textDecoration: 'none' }}>Pedro.</a>
+      <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}>
+        <motion.div style={{ width: widthS }} className='top-11 backdrop-blur-xs fixed  left-1/2 transform -translate-x-1/2 px-4 bg-white/10 rounded-2xl shadow-lg px-6 py-2 border border-white/20'>
+            <nav>
+              <div>
+                <div className="flex items-center justify-between">
+                  
+                  {/* Logo */}
+                  <div>
+                    <a href="#" className={`${newsreader.className} text-2xl italic text-[#f3e9e2]`} style={{ textDecoration: 'none' }}>Pedro.</a>
+                  </div>
+
+                  {/* Links desktop */}
+                  <div className="hidden md:flex space-x-8">
+                    <a href="#experience" className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Experience</a>
+                    <a href="#education" className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Education</a>
+                    <a href="#projects" className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
+                    
+                  </div>
+                  <div className="hidden md:flex space-x-8"> 
+                    <a href="#contact" className={`${fraunces.className} py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Get in touch</a>
+                  </div>
+
+                  {/* Botón menú mobile */}
+                  <button 
+                    className="md:hidden text-white text-2xl cursor-pointer hover:scale-110" 
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    {isOpen ? "✖" : "☰"}
+                  </button>
                 </div>
 
-                {/* Links desktop */}
-                <div className="hidden md:flex space-x-8">
-                  <a href="#experience" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Experience</a>
-                  <a href="#education" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Education</a>
-                  <a href="#projects" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Projects</a>
-                  <a href="#contact" className="py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold">Contact</a>
-                </div>
-
-                {/* Botón menú mobile */}
-                <button 
-                  className="md:hidden text-white text-2xl cursor-pointer hover:scale-110" 
-                  onClick={() => setIsOpen(!isOpen)}
+                {/* Menú desplegable mobile animado */}
+                <div
+                  className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+                    isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
+                  }`}
                 >
-                  {isOpen ? "✖" : "☰"}
-                </button>
-              </div>
-
-              {/* Menú desplegable mobile animado */}
-              <div
-                className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-                  isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/50 px-4 py-3 space-y-2">
-                  <a href="#experience" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Experience</a>
-                  <a href="#education" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Education</a>
-                  <a href="#projects" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Projects</a>
-                  <a href="#contact" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Contact</a>
+                  <div className="bg-white/5 backdrop-blur-md rounded-xl shadow-lg border border-white/50 px-4 py-3 space-y-2">
+                    <a href="#experience" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Experience</a>
+                    <a href="#education" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Education</a>
+                    <a href="#projects" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Projects</a>
+                    <a href="#contact" onClick={() => setIsOpen(!isOpen)} className="block text-white hover:text-gray-300 no-underline font-semibold">Contact</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </nav>
-        </FadeContent>
-      </motion.div>
+            </nav>
+        </motion.div>
+      </FadeContent>
     </div>
   );
 }
