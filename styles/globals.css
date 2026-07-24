@@ -59,13 +59,13 @@
     }
 
     .btn {
-        @apply inline-flex items-center justify-center gap-2 font-bold text-center no-underline transition-colors cursor-pointer bg-primary text-primary-content;
+        @apply inline-flex items-center justify-center text-center transition-colors cursor-pointer bg-white text-primary-content;
         padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
         font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
+        border-radius: var(--btn-border-radius, 0.50rem);
 
         &:hover {
-            @apply bg-primary/85;
+            @apply bg-white/50;
         }
 
         &:disabled {
@@ -285,10 +285,14 @@
     text-shadow: 
     0 0 1px #ffffff,
     0 0 1px #ffffff,
+    0 0 1px #ffffff,
+    0 0 1px #ffffff;
   }
   to {
     text-shadow: 
-    0 0 2px #ffffff,
-    0 0 2px #ffffff,
+    0 0 6px #ffffff,
+    0 0 6px #ffffff,
+    0 0 6px #ffffff,
+    0 0 6px #ffffff;
   }
 }
