@@ -36,12 +36,15 @@ const Hero = ({}) => {
     return (
         <section>
             <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}>
-            <div className="relative min-h-screen w-full overflow-hidden">
-                <div className="absolute inset-0 z-0 md:w-93/96 lg:w-93/96 items-center justify-center mx-auto flex flex-col md:flex-row gap-4 md:gap-8"> 
-                    <img 
-                        src="/images/edited_small_hand.png" 
-                        className="rounded-xl select-none pointer-events-none" 
-                    />
+            <div className="relative h-[100svh] w-full overflow-hidden">
+                    <div className="absolute inset-5">
+                        <img 
+                            src="/images/edited_small_hand.png" 
+                            className="rounded-xl inset-0 z-0 w-full h-full object-cover object-center select-none pointer-events-none" 
+                        />
+                    </div>
+                <div className="md:hidden text-white">
+                    HOLAAAAAAAAAAAAAAAAAAA
                 </div>
                 
                 <div className="relative z-10 text-centerrelative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
