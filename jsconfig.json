@@ -2,6 +2,9 @@
     "compilerOptions": {
         "ignoreDeprecations": "6.0",
         "jsx": "react",
-        "baseUrl": "."
+        "baseUrl": ".", 
+        "paths": {
+            "@/*": ["src/*"]
+        }
       }    
 }
