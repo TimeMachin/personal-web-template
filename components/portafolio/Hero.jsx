@@ -53,8 +53,8 @@ const Hero = ({}) => {
                         className={`${ebGaramond.className} glow text-5xl font-light tracking-tight leading-tight text-white`}
                     /> */}
                     <FlipFadeText
-                    words={["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER", "PROBLEM SOLVER", "CYBERSECURITY'\nENTHUSIAST", "CLOUD ENTHUSIAST"]}
-                    className={`${ebGaramond.className} glow text-xl font-light tracking-tight leading-tight text-white`}
+                    words={["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER", "PROBLEM SOLVER", "CYBERSECURITY ENTHUSIAST", "CLOUD ENTHUSIAST"]}
+                    className={`${ebGaramond.className} glow font-light tracking-tight leading-tight text-white`}
                     />
                 </div>
                 <div className="absolute bottom-10 left-5 right-5 z-10 flex items-center justify-between px-8 py-6 text-white/60 text-m">
