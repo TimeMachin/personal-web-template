@@ -108,7 +108,7 @@ const Word = memo(function Word({
     return (
         <motion.div
             className={cn(
-                "flex gap-[0.1em] text-xl md:text-6xl font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-100",
+                "flex gap-[0.1em] text-2xl md:text-6xl font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-100",
                 textClassName
             )}
             initial="initial"
