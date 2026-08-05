@@ -10,7 +10,6 @@ export default function GetQuote() {
     async function load() {
       try {
         const res = await fetch("/api/quotes", { method: "GET" });
-        console.log("Quotes API response:", res);
 
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const json = await res.json();
