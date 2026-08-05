@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { newsreader, inter, fraunces, ebGaramond } from "/components/fonts";
 
 export default function GetQuote() {
   const [quote, setQuote] = useState(null);
@@ -24,5 +25,5 @@ export default function GetQuote() {
 
   if (error) return <div>Error: {error}</div>;
   if (!quote) return <div>Loading...</div>;
-  return <pre>{JSON.stringify(quote[0].q, null, 2)}</pre>;
+  return <pre className={`${ebGaramond.className} text-2xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}>{JSON.stringify(quote[0].q, null, 2)}</pre>;
 }
