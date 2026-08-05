@@ -48,13 +48,6 @@ const Hero = ({}) => {
                     />
                 </div>
                 <div className="w-full relative z-10 text-centerrelative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
-{/*                     <BlurText
-                        text="Imagine a space"
-                        delay={50}
-                        animateBy="letters"
-                        direction="top"
-                        className={`${ebGaramond.className} glow text-5xl font-light tracking-tight leading-tight text-white`}
-                    /> */}
                     <FlipFadeText
                     words={["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER", "PROBLEM SOLVER", "CYBERSECURITY ENTHUSIAST", "CLOUD ENTHUSIAST"]}
                     className={`${ebGaramond.className} glow font-light tracking-tight leading-tight text-white`}
