@@ -14,6 +14,9 @@ import FlipFadeText from "components/animations/FlipText";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+// APIS
+import GetQuote from "src/lib/api/QuotesHandler";
+
 
 const Hero = ({}) => {
     // Reloj
@@ -56,6 +59,7 @@ const Hero = ({}) => {
                     words={["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER", "PROBLEM SOLVER", "CYBERSECURITY ENTHUSIAST", "CLOUD ENTHUSIAST"]}
                     className={`${ebGaramond.className} glow font-light tracking-tight leading-tight text-white`}
                     />
+                    <GetQuote />
                 </div>
                 <div className="absolute bottom-10 left-5 right-5 z-10 flex items-center justify-between px-8 py-6 text-white/60 text-m">
                     <BlurText text={time} delay={100} animateBy="letters" direction="bottom" className={`${fraunces.className}`}/>

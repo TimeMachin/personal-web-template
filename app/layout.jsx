@@ -34,6 +34,7 @@ import ScrollProgress from 'components/animations/ScrollProgress'; // Este compo
 {/* API Calls */}
 import { getUsers } from 'src/lib/api/users';
 import { getQuotes } from 'src/lib/api/quotes';
+import { getSongs } from 'src/lib/api/songs';
 import FaultyTerminal from 'components/backgrounds/FaultyTerminal';
 
 export const metadata = {
