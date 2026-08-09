@@ -43,8 +43,8 @@ export default function GetQuote() {
   if (error) return <BlurText text="In the end, everything will be alright and if it's not alright, it's not the end" delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
   if (!quote) return <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}><p className={`${ebGaramond.className} text-xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}>Loading...</p></FadeContent>
   if (YE) {
-    return <BlurText text={JSON.stringify(quote.quote, null, 2)} delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-2xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
+    return <BlurText text={JSON.stringify(quote.quote, null, 2)} delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-2xl justify-center font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
   } else {
-    return <BlurText text={JSON.stringify(quote[0].q, null, 2)} delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-2xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
+    return <BlurText text={JSON.stringify(quote[0].q, null, 2)} delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-2xl justify-center font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
   }
 }
