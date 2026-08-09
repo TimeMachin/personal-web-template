@@ -61,13 +61,9 @@ export default async function RootLayout({ children }) {
                 {/* Seccion de barra de navegacion */}
                 <Navbar></Navbar>
                 
-                {/* Seccion de contenido       bg-white/10 */}
+                {/* Seccion de contenido principal */}
                 <section id='about'>
                     <Hero></Hero>
-                </section>
-
-                <section id='inspiration' className='py-2 md:py-8 flex items-center justify-right'>
-                    {/* <p className="text-white text-lg mt-4">{quotes[0].q} — {quotes[0].a}</p> */}
                 </section>
 
                 <section id='experience' className='py-6 md:py-8 flex items-center justify-center'>

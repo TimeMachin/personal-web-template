@@ -1,10 +1,13 @@
 import { NextResponse } from "next/server";
 
+const sourceUrl = "https://zenquotes.io/api/random";
+const KanyeSourceUrl = 'https://api.kanye.rest/';
+
 export async function GET() {
-  const res = await fetch("https://zenquotes.io/api/random", { method: "GET" });
+  const res = await fetch(KanyeSourceUrl, { method: "GET" });
   if (!res.ok) {
     return NextResponse.json(
-      { error: "ZenQuotes request failed", status: res.status },
+      { error: "Quote request failed", status: res.status },
       { status: 502 }
     );
   }

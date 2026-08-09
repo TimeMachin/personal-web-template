@@ -16,6 +16,7 @@ import { useState, useEffect } from "react";
 
 // APIS
 import GetQuote from "src/lib/api/QuotesHandler";
+import GetWeather from "src/lib/api/WeatherHandler";
 
 
 const Hero = ({}) => {
@@ -36,7 +37,8 @@ const Hero = ({}) => {
         const interval = setInterval(updateTime, 60000);
         return () => clearInterval(interval);
     }, []);
-
+    const weather = GetWeather();
+    console.log("Weather Test:", weather);
     return (
         <section>
             <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}>
@@ -54,43 +56,28 @@ const Hero = ({}) => {
                     />
                     <GetQuote />
                 </div>
-                <div className="absolute bottom-10 left-5 right-5 z-10 flex items-center justify-between px-8 py-6 text-white/60 text-m">
-                    <BlurText text={time} delay={100} animateBy="letters" direction="bottom" className={`${fraunces.className}`}/>
-                    <BlurText text="Scroll to Explore" delay={300} animateBy="words" direction="bottom" className={`${fraunces.className} glow`}/>
-                    <BlurText text="Madrid, Spain" delay={100} animateBy="letters" direction="bottom" className={`${fraunces.className}`}/>
+                <div className="absolute bottom-10 left-5 right-5 z-10 px-8 py-6 text-white/60 text-m">
+                    <div className="flex items-center">
+                        <div className="flex-1">
+                            <BlurText text={`Madrid, Spain | ${weather.props.children}°C`} delay={100} animateBy="letters" direction="bottom" className={`${fraunces.className}`}/>
+                        </div>
+                        <div className="flex-none">
+                            <BlurText text="Scroll to Explore" delay={300} animateBy="words" direction="bottom" className={`${fraunces.className} glow`}/>
+                        </div>
+                        <div className="flex-1 flex justify-end">
+                            <BlurText text={time} delay={100} animateBy="letters" direction="bottom" className={`${fraunces.className}`}/>
+                        </div>
+                    </div>
                 </div>
             </div>
             </FadeContent>
-            <div className="mt-10 flex items-center justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-x w-11/12">
-                    <div className="flex items-center justify-center">
-                        <div className="grid grid-cols-1 divide-y w-23/24">
-                            <div className="flex items-center justify-center">
-                                <PixelHover
-                                    image="/images/profile.png"
-                                />
-                            </div>
-                            <div className="text-4xl quantico-bold text-white">
-                                <TextType 
-                                    text={["Pedro R. Treviño", "Software Developer", "Cybersecurity Engineer"]}
-                                    typingSpeed={25}
-                                    pauseDuration={3000}
-                                    showCursor={true}
-                                    cursorCharacter="_"
-                                />
-                            </div>
-                        </div>
-                    </div>
+            <div className="mt-50 flex items-center justify-center m-20">
                     <div className="flex items-center justify-center p-2">
-                        <p className={`${newsreader.className} text-2xl text-[#f3e9e2]`}>
-                            I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on 
-                            backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with 
-                            a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative 
-                            environments where communication, precision, and analytical thinking drive impactful solutions.
+                        <p className={`${newsreader.className} text-5xl text-[#f3e9e2] wrap-balance text-center`}>
+                            I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative environments where communication, precision, and analytical thinking drive impactful solutions.
                         </p>
                     </div>
                 </div>
-            </div>
         </section>
 
     );
