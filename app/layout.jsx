@@ -104,8 +104,6 @@ export default async function RootLayout({ children }) {
                         opacity={1}
                     />
                 </div> */}
-                {/* Render the route page here */}
-                <main>{children}</main>
             </body>
         </html>
     );
