@@ -77,7 +77,7 @@ const Hero = ({}) => {
                             I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative environments where communication, precision, and analytical thinking drive impactful solutions.
                         </p>
                     </div>
-                    <div >
+                    <div className="overflow-hidden" >
                         <ScrollText className="min-w-full mt-auto" text="Welcome to my portfolio!" textFont={{ fontFamily: `${ebGaramond.className}` }} />
                     </div>
             </div>
