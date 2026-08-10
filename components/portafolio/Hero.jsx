@@ -9,6 +9,7 @@ import PixelHover from "components/animations/PixelHover";
 import BlurText from "components/animations/BlurTextFall";
 import FadeContent from "components/animations/fade";
 import FlipFadeText from "components/animations/FlipText";
+import ScrollText from "components/animations/ScrollText";
 
 // Otras librerias
 import Image from "next/image";
@@ -38,7 +39,6 @@ const Hero = ({}) => {
         return () => clearInterval(interval);
     }, []);
     const weather = GetWeather();
-    console.log("Weather Test:", weather);
     return (
         <section>
             <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}>
@@ -71,13 +71,17 @@ const Hero = ({}) => {
                 </div>
             </div>
             </FadeContent>
-            <div className="mt-50 flex items-center justify-center m-20">
-                    <div className="flex items-center justify-center p-2">
+            <div className="min-h-screen flex flex-col">
+                    <div className="flex-1 flex items-center justify-center px-6 py-12">
                         <p className={`${newsreader.className} text-5xl text-[#f3e9e2] wrap-balance text-center`}>
                             I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative environments where communication, precision, and analytical thinking drive impactful solutions.
                         </p>
                     </div>
-                </div>
+                    <div >
+                        <ScrollText className="min-w-full mt-auto" text="Welcome to my portfolio!" textFont={{ fontFamily: `${ebGaramond.className}` }} />
+                    </div>
+            </div>
+            
         </section>
 
     );

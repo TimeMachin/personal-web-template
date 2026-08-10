@@ -1,7 +1,6 @@
 {/* Imports de Estilos */}
 import '../styles/globals.css';
 import '../styles/lightfall.css';
-import '../styles/faultyTerminal.css';
 
 {/* Imports de Fondos */}
 import Lightfall from 'components/backgrounds/Lightfall';
@@ -31,11 +30,6 @@ import CoverLetter from 'components/portafolio/CoverLetter';
 import { FadeIn } from 'components/animations/FadeIn'; // Este componente crea un div que se anima al hacer scroll, usando framer-motion con un efecto de aparecer
 import ScrollProgress from 'components/animations/ScrollProgress'; // Este componente crea una barra de progreso que indica el porcentaje de scroll de la pagina, usando framer-motion
 
-{/* API Calls */}
-import { getUsers } from 'src/lib/api/users';
-import { getQuotes } from 'src/lib/api/quotes';
-import { getSongs } from 'src/lib/api/songs';
-import FaultyTerminal from 'components/backgrounds/FaultyTerminal';
 
 export const metadata = {
     title: {
@@ -45,8 +39,6 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-/*     const quotes = await getQuotes();
-    console.log('Quotes:', quotes); */
     return (
         <html lang="en">
             <head>
@@ -100,7 +92,7 @@ export default async function RootLayout({ children }) {
                 </div>
 
                 {/* Seccion de blur inferior */}
-                <div className='bg-letterglitch z-1'>
+{/*                 <div className='bg-letterglitch z-1'>
                     <GradualBlurMemo
                         target="page"
                         position="bottom"
@@ -111,7 +103,9 @@ export default async function RootLayout({ children }) {
                         exponential={true}
                         opacity={1}
                     />
-                </div>
+                </div> */}
+                {/* Render the route page here */}
+                <main>{children}</main>
             </body>
         </html>
     );
