@@ -5,7 +5,7 @@ import * as math from 'mathjs';
 const DEFAULT_CONFIG = {
   position: 'bottom',
   strength: 2,
-  height: '6rem',
+  height: '3rem',
   divCount: 5,
   exponential: false,
   zIndex: 1000,
@@ -22,7 +22,7 @@ const DEFAULT_CONFIG = {
 
 const PRESETS = {
   top: { position: 'top', height: '6rem' },
-  bottom: { position: 'bottom', height: '6rem' },
+  bottom: { position: 'bottom', height: '2rem' },
   left: { position: 'left', height: '6rem' },
   right: { position: 'right', height: '6rem' },
   subtle: { height: '4rem', strength: 1, opacity: 0.8, divCount: 3 },

@@ -1,12 +1,10 @@
-import TextType from "components/animations/textType";
+import Framer from 'components/Framer'
+import { newsreader, inter, fraunces, ebGaramond } from "../fonts";
 
 const Education = ({}) => {
     return (
-        <div className="flex gap-[2%] flex-wrap content-start">
-            <div className="w-full h-[5%]">Header</div>
-            <div className="w-3/4 h-3/4">Sidebar</div>
-            <div className="grow h-3/4 w-[1%]">Content</div>
-            <div className="w-full h-[5%]">Footer</div>
+        <div className='flex items-center justify-center'>
+            <Framer imageMode='custom' customImage={{src: "/images/small_footer_2.png"}} title='YouTube' link='https://youtube.com' textColor='#ffffff' font={{fontFamily: `${fraunces.className}`, fontSize: "44px"}}/>
         </div>
     );
 }

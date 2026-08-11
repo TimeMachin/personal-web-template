@@ -5,26 +5,24 @@ import '../styles/lightfall.css';
 {/* Imports de Fondos */}
 import Lightfall from 'components/backgrounds/Lightfall';
 import DotMatrix from 'components/backgrounds/DotMatrix';
+import DotGrid from 'components/backgrounds/DotGrid';
 import LetterGlitch from '../components/backgrounds/LetterGlitch';
 import Waves from 'components/backgrounds/Waves';
 
 {/* Imports de animaciones */}
 import FadeContent from 'components/animations/fade';
-import TextType from 'components/animations/textType';
 
 {/* Imports de componentes */}
 import Navbar from 'components/navbar';
 import GradualBlurMemo from 'components/animations/GradualBlur ';
 import SpotlightCard from 'components/SpotlightCard';
-import Framer from 'components/Framer';
 
 {/* Imports de contenido */}
 import Hero from 'components/portafolio/Hero';
 import Experience from 'components/portafolio/Experience';
 import Education from 'components/portafolio/Education';
 import Projects from 'components/portafolio/Projects';
-import Contacts from 'components/portafolio/Contacts';
-import CoverLetter from 'components/portafolio/CoverLetter';
+import Footer from 'components/portafolio/Footer';
 
 {/* Scroll de triggers (BETA) */}
 import { FadeIn } from 'components/animations/FadeIn'; // Este componente crea un div que se anima al hacer scroll, usando framer-motion con un efecto de aparecer
@@ -47,11 +45,14 @@ export default async function RootLayout({ children }) {
             <body>
                 {/* Seccion de configuracion de fondo de pagina */}
                 <div className='bg-letterglitch fixed'>
-                    <DotMatrix/>
+                    {/* <DotMatrix/> */}
+                    <DotGrid />
                 </div>
 
                 {/* Seccion de barra de navegacion */}
-                <Navbar></Navbar>
+                <section id='navbar'>
+                    <Navbar></Navbar>
+                </section>
                 
                 {/* Seccion de contenido principal */}
                 <section id='about'>
@@ -70,29 +71,24 @@ export default async function RootLayout({ children }) {
                         viewport={{ amount: 'all', once: false }}
                         className="bg-blue-500"
                     >
-                        <p className="text-white text-xl">Fade In animations testing</p>
+                            <p className="text-white text-xl">Fade In animations testing</p>
                     </FadeIn>
                 </section>
 
                 <section id='education' className='text-white'>
-                    <Framer/>
+                    <Education></Education>
                 </section>
 
                 <section id='projects' className='text-white'>
                     <Projects></Projects>
                 </section>
 
-                <section id='contact' className='text-white mb-20'>
-                    <Contacts></Contacts>
+                <section id='footer' className='text-white min-h-screen'>
+                    <Footer></Footer>
                 </section>
 
-                {/* Seccion de rueda de contactos en parte inferior derecha */}
-                <div className="fixed bottom-4 right-4 z-2">
-                    <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}></FadeContent>
-                </div>
-
                 {/* Seccion de blur inferior */}
-{/*                 <div className='bg-letterglitch z-1'>
+                <section id='blur-bottom' className='bg-letterglitch z-11'>
                     <GradualBlurMemo
                         target="page"
                         position="bottom"
@@ -103,7 +99,7 @@ export default async function RootLayout({ children }) {
                         exponential={true}
                         opacity={1}
                     />
-                </div> */}
+                </section>
             </body>
         </html>
     );

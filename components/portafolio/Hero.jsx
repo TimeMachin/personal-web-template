@@ -4,15 +4,12 @@
 import { newsreader, inter, fraunces, ebGaramond } from "../fonts";
 
 // Import de animaciones
-import TextType from "components/animations/textType";
-import PixelHover from "components/animations/PixelHover";
 import BlurText from "components/animations/BlurTextFall";
 import FadeContent from "components/animations/fade";
 import FlipFadeText from "components/animations/FlipText";
 import ScrollText from "components/animations/ScrollText";
 
 // Otras librerias
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 // APIS
@@ -72,13 +69,13 @@ const Hero = ({}) => {
                 </div>
             </FadeContent>
             <div className="min-h-screen flex flex-col">
-                <div className="flex-1 flex items-center justify-center px-6 py-12">
+                <div className="flex-1 flex items-center justify-center px-20 ">
                     <p className={`${newsreader.className} text-5xl text-[#f3e9e2] wrap-balance text-center`}>
                         I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative environments where communication, precision, and analytical thinking drive impactful solutions.
                     </p>
                 </div>
-                <div className="flex items-center bg-black" >
-                    <div className="flex-[1] flex justify-end items-center">
+                <div className="flex items-center" >
+                    <div className="flex-[1] flex justify-center items-center">
                         <img src="/images/trust.png" width="75%" className="object-cover object-center select-none pointer-events-none" />
                     </div>
 
