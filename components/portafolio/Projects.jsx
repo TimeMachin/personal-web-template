@@ -1,12 +1,16 @@
-import TextType from "components/animations/textType";
+import FadeContent from "components/animations/fade";
 
 const Projects = ({}) => {
     return (
-        <div className="flex gap-[2%] flex-wrap content-start">
-            <div className="w-full h-[5%]">Header</div>
-            <div className="w-3/4 h-3/4">Sidebar</div>
-            <div className="grow h-3/4 w-auto">Content</div>
-        </div>
+        <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}>
+            <div className="relative h-[100svh] w-full overflow-hidden flex flex-col items-center justify-center">
+                <div>
+                    <h1>
+                        Here should go cool projects!
+                    </h1>
+                </div>
+            </div>
+        </FadeContent>
     );
 }
 

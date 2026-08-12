@@ -43,7 +43,7 @@ export default async function RootLayout({ children }) {
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
             <body>
-                {/* Seccion de configuracion de fondo de pagina */}
+                {/* Seccion de configuracion de fondo de pagina (To Do: que cambie el fondo de pantalla dependiendo de la seccion que se vea, esto hazlo dinamico para el scroll*/}
                 <div className='bg-letterglitch fixed'>
                     {/* <DotMatrix/> */}
                     <DotGrid />
@@ -54,35 +54,27 @@ export default async function RootLayout({ children }) {
                     <Navbar></Navbar>
                 </section>
                 
-                {/* Seccion de contenido principal */}
+                {/* Seccion de contenido de presentacion */}
                 <section id='about'>
                     <Hero></Hero>
                 </section>
 
-                <section id='experience' className='py-6 md:py-8 flex items-center justify-center'>
+                {/* Seccion de contenido de experiencia laboral */}
+                <section id='experience'>
                     <Experience></Experience>
                 </section>
 
-                <section id='scroll' className='text-white'>
-                    <FadeIn
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ amount: 'all', once: false }}
-                        className="bg-blue-500"
-                    >
-                            <p className="text-white text-xl">Fade In animations testing</p>
-                    </FadeIn>
-                </section>
-
+                {/* Seccion de contenido de educacion */}
                 <section id='education' className='text-white'>
                     <Education></Education>
                 </section>
 
+                {/* Seccion de contenido de proyectos */}
                 <section id='projects' className='text-white'>
                     <Projects></Projects>
                 </section>
 
+                {/* Seccion de contenido del footer */}
                 <section id='footer' className='text-white min-h-screen'>
                     <Footer></Footer>
                 </section>
