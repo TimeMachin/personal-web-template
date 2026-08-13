@@ -2,6 +2,7 @@ import TextType from "components/animations/textType";
 import SpotlightCard from "components/SpotlightCard";
 import { FadeIn } from "components/animations/FadeIn";
 import FadeContent from "components/animations/fade";
+import Timeline from "components/Timeline";
 
 const Experience = ({}) => {
     return (
@@ -15,6 +16,7 @@ const Experience = ({}) => {
                         Validates how you've applied it in real settings
                     </h2>
                 </div>
+                <Timeline></Timeline>
             </div>
         </FadeContent>
     );

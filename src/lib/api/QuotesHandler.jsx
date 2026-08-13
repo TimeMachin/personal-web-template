@@ -5,6 +5,7 @@ import { newsreader, inter, fraunces, ebGaramond } from "/components/fonts";
 
 import BlurText from "components/animations/BlurTextFall";
 import FadeContent from "components/animations/fade";
+import { LoadingDots } from "components/animations/LoadingDots";
 
 export default function GetQuote() {
   const [quote, setQuote] = useState(null);
@@ -41,7 +42,7 @@ export default function GetQuote() {
   const YE = true; // is Kanye West quote? (true) or ZenQuotes (false)
 
   if (error) return <BlurText text="In the end, everything will be alright and if it's not alright, it's not the end" delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
-  if (!quote) return <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}><p className={`${ebGaramond.className} text-xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}>Loading...</p></FadeContent>
+  if (!quote) return <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}><LoadingDots></LoadingDots></FadeContent>
   if (YE) {
     return <BlurText text={JSON.stringify(quote.quote, null, 2)} delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-2xl justify-center font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
   } else {
