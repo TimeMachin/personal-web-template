@@ -45,7 +45,6 @@ export default async function RootLayout({ children }) {
             <body>
                 {/* Seccion de configuracion de fondo de pagina (To Do: que cambie el fondo de pantalla dependiendo de la seccion que se vea, esto hazlo dinamico para el scroll*/}
                 <div className='bg-letterglitch fixed'>
-                    {/* <DotMatrix/> */}
                     <DotGrid />
                 </div>
 
@@ -59,6 +58,11 @@ export default async function RootLayout({ children }) {
                     <Hero></Hero>
                 </section>
 
+                {/* Seccion de contenido de proyectos */}
+                <section id='projects' className='text-white'>
+                    <Projects></Projects>
+                </section>
+
                 {/* Seccion de contenido de experiencia laboral */}
                 <section id='experience'>
                     <Experience></Experience>
@@ -67,11 +71,6 @@ export default async function RootLayout({ children }) {
                 {/* Seccion de contenido de educacion */}
                 <section id='education' className='text-white'>
                     <Education></Education>
-                </section>
-
-                {/* Seccion de contenido de proyectos */}
-                <section id='projects' className='text-white'>
-                    <Projects></Projects>
                 </section>
 
                 {/* Seccion de contenido del footer */}

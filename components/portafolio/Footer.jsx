@@ -29,10 +29,6 @@ const Footer = ({}) => {
                         </FadeIn>
                     </div>
                     <FadeIn initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }} viewport={{ amount: 'all', once: false }}>
-{/*                         <button className={`${fraunces.className} btn py-2 mt-10 cursor-pointer px-3 text-black hover:text-gray-300 no-underline font-semibold`}
-                                onClick={() => {window.location.href = "mailto:trevinop36@gmail.com";}}>
-                            Get in touch
-                        </button> */}
                         <GetInTouchButton></GetInTouchButton>
                     </FadeIn>
                 </div>

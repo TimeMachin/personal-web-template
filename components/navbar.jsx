@@ -1,9 +1,14 @@
 "use client"
-import { useState } from "react";
-import Image from "next/image";
-import {motion, useScroll, useTransform } from 'framer-motion';
+
+// import animations
 import FadeContent from "./animations/fade";
+import {motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useState } from "react";
+
+// import fonts
 import { newsreader, inter, fraunces, ebGaramond } from "./fonts";
+
+// import components
 import GetInTouchButton from "./GetInTouch";
 
 const scrollToHash = (hash) => {
@@ -21,17 +26,18 @@ export default function Navbar() {
   // State to manage the mobile menu toggle
   const [isOpen, setIsOpen] = useState(false);
 
-  // Variable width size of navbar calculations
+  // Smooth variable width
+  const cutoff = 0.20; 
+  const minW = 65;
   const { scrollYProgress } = useScroll();
-  const widthS = useTransform(scrollYProgress, (v) => {
-  const cutoff = 0.20; // Porcentaje de scroll en el que la barra de navegacion alcanza su tamaño minimo
-  const minW = 65;     // Limite de tamaño minimo de la barra de navegacion en porcentaje
-  if (v <= cutoff) {
-    const t = v / cutoff;              // 0..1
-    return `${85 - (85 - minW) * t}%`; // 100% -> 75%
-  }
-  return `${minW}%`; // stay at 75% after 20%
-});
+  const targetWidth = useTransform(scrollYProgress, (v) => {
+    if (v <= cutoff) {
+        const t = v / cutoff;
+        return `${85 - (85 - minW) * t}%`;
+    }
+    return `${minW}%`;
+  });
+  const widthS = useSpring(targetWidth, { stiffness: 120, damping: 20, mass: 0.6 });
 
   // Render the navbar
   return (
@@ -48,9 +54,9 @@ export default function Navbar() {
 
                 {/* Links desktop */}
                 <div className="hidden md:flex space-x-8">
+                  <a href="#projects" onClick={(e) => {e.preventDefault(); scrollToHash("#projects");}} className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
                   <a href="#experience" onClick={(e) => {e.preventDefault(); scrollToHash("#experience");}} className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Experience</a>
                   <a href="#education" onClick={(e) => {e.preventDefault(); scrollToHash("#education");}} className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Education</a>
-                  <a href="#projects" onClick={(e) => {e.preventDefault(); scrollToHash("#projects");}} className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
                   
                 </div>
                 <div className="hidden md:flex space-x-8"> 
@@ -58,26 +64,19 @@ export default function Navbar() {
                 </div>
 
                 {/* Botón menú mobile */}
-                <button 
-                  className="md:hidden text-white text-2xl cursor-pointer hover:scale-110" 
-                  onClick={() => setIsOpen(!isOpen)}
-                >
+                <button className="md:hidden text-white text-2xl cursor-pointer hover:scale-110" onClick={() => setIsOpen(!isOpen)}>
                   {isOpen ? "X" : "☰"}
                 </button>
               </div>
 
               {/* Menú desplegable mobile animado */}
-              <div
-                className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-                  isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
-                }`}
-              > 
+              <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"}`}> 
                 <div className="px-4 py-3 space-y-2 flex flex-col justify-between items-left gap-2">
+                  <a href="#projects" onClick={(e) => {e.preventDefault(); scrollToHash("#projects");setIsOpen(!isOpen);}} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
+                  <div className="h-px bg-gray-100 my-1" />
                   <a href="#experience" onClick={(e) => {e.preventDefault(); scrollToHash("#experience");setIsOpen(!isOpen);}} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Experience</a>
                   <div className="h-px bg-gray-100 my-1" />
                   <a href="#education" onClick={(e) => {e.preventDefault(); scrollToHash("#education");setIsOpen(!isOpen);}} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Education</a>
-                  <div className="h-px bg-gray-100 my-1" />
-                  <a href="#projects" onClick={(e) => {e.preventDefault(); scrollToHash("#projects");setIsOpen(!isOpen);}} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
                   <button className={`${fraunces.className} items-left mt-15 btn w-full py-2 cursor-pointer px-3 text-black hover:text-gray-300 no-underline font-semibold`}
                   onClick={() => {window.location.href = "mailto:trevinop36@gmail.com";}}>
                     Get in touch
