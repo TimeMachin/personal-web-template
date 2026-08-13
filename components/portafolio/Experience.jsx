@@ -3,22 +3,36 @@ import TextType from "components/animations/textType";
 import SpotlightCard from "components/SpotlightCard";
 import { FadeIn } from "components/animations/FadeIn";
 import FadeContent from "components/animations/fade";
-import Timeline from "components/Timeline";
 import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const TIMELINE_DATA = [
   {
-    date: 'Today',
-    title: 'Web Development Intern',
+    company: 'IBM',
+    dateStart: '', 
+    dateEnd: '',
+    position: 'Software Developer',
     subtitle: 'ITESM',
     bullets: ['Walked along the shore', 'Took photos', 'Watched the light fade'],
     imageSrc:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
     text: 'A slow, relaxing moment—everything felt quiet and reset my head.',
   },
     {
-    date: '1d ago',
-    title: 'Misty Mountains',
+    company: 'IBM',
+    dateStart: '', 
+    dateEnd: '',
+    position: 'Blue Program Intern',
+    subtitle: 'Fog + pine + fresh air',
+    bullets: ['Hiked a new route', 'Felt grounded', 'Found a small overlook'],
+    imageSrc:
+      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80',
+    text: 'The mist made everything feel cinematic, and the climb was worth it.',
+  },
+    {
+    company: 'ITESM',
+    dateStart: '', 
+    dateEnd: '',
+    position: 'Web Developer Intern',
     subtitle: 'Fog + pine + fresh air',
     bullets: ['Hiked a new route', 'Felt grounded', 'Found a small overlook'],
     imageSrc:
@@ -55,12 +69,8 @@ const Experience = ({}) => {
                 transition={{ duration: 0.15 }}
                 style={{ height: '100%' }}
               >
-                <div style={{ opacity: 0.9, fontSize: 12, fontWeight: 800, letterSpacing: 0.2 }}>
-                  {selected.date}
-                </div>
-
                 <div style={{ marginTop: 8, fontSize: 22, fontWeight: 950, lineHeight: 1.15 }}>
-                  {selected.title}
+                  {selected.position}
                 </div>
 
                 <div style={{ marginTop: 6, opacity: 0.95, fontWeight: 800 }}>{selected.subtitle}</div>
@@ -155,7 +165,7 @@ const Experience = ({}) => {
                         }}
                       />
                       <div style={{ fontSize: 12, fontWeight: 950, opacity: isActive ? 1 : 0.85 }}>
-                        {item.date}
+                        {item.company}
                       </div>
                     </div>
                   </motion.button>
