@@ -4,6 +4,18 @@ import Image from "next/image";
 import {motion, useScroll, useTransform } from 'framer-motion';
 import FadeContent from "./animations/fade";
 import { newsreader, inter, fraunces, ebGaramond } from "./fonts";
+import GetInTouchButton from "./GetInTouch";
+
+const scrollToHash = (hash) => {
+  const id = hash.replace("#", "");
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const offsetPx = 0; // tweak this
+  const y = el.getBoundingClientRect().top + window.scrollY - offsetPx;
+
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
 
 export default function Navbar() {
   // State to manage the mobile menu toggle
@@ -31,21 +43,18 @@ export default function Navbar() {
               <div className="flex items-center justify-between">
                 {/* Logo */}
                 <div>
-                  <a href="#" className={`${newsreader.className} text-2xl italic text-[#f3e9e2]`} style={{ textDecoration: 'none' }}>Pedro.</a>
+                  <a href="#about" onClick={(e) => {e.preventDefault(); scrollToHash("#about");}} className={`${newsreader.className} text-2xl italic text-[#f3e9e2]`} style={{ textDecoration: 'none' }}>Pedro.</a>
                 </div>
 
                 {/* Links desktop */}
                 <div className="hidden md:flex space-x-8">
-                  <a href="#experience" className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Experience</a>
-                  <a href="#education" className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Education</a>
-                  <a href="#projects" className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
+                  <a href="#experience" onClick={(e) => {e.preventDefault(); scrollToHash("#experience");}} className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Experience</a>
+                  <a href="#education" onClick={(e) => {e.preventDefault(); scrollToHash("#education");}} className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Education</a>
+                  <a href="#projects" onClick={(e) => {e.preventDefault(); scrollToHash("#projects");}} className={`${fraunces.className} glow py-2 px-3 text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
                   
                 </div>
                 <div className="hidden md:flex space-x-8"> 
-                  <button className={`${fraunces.className} btn py-2 cursor-pointer px-3 text-black hover:text-gray-300 no-underline font-semibold`}
-                  onClick={() => {window.location.href = "mailto:trevinop36@gmail.com";}}>
-                    Get in touch
-                  </button>
+                  <GetInTouchButton></GetInTouchButton>
                 </div>
 
                 {/* Botón menú mobile */}
@@ -64,11 +73,11 @@ export default function Navbar() {
                 }`}
               > 
                 <div className="px-4 py-3 space-y-2 flex flex-col justify-between items-left gap-2">
-                  <a href="#experience" onClick={() => setIsOpen(!isOpen)} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Experience</a>
+                  <a href="#experience" onClick={(e) => {e.preventDefault(); scrollToHash("#experience");setIsOpen(!isOpen);}} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Experience</a>
                   <div className="h-px bg-gray-100 my-1" />
-                  <a href="#education" onClick={() => setIsOpen(!isOpen)} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Education</a>
+                  <a href="#education" onClick={(e) => {e.preventDefault(); scrollToHash("#education");setIsOpen(!isOpen);}} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Education</a>
                   <div className="h-px bg-gray-100 my-1" />
-                  <a href="#projects" onClick={() => setIsOpen(!isOpen)} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
+                  <a href="#projects" onClick={(e) => {e.preventDefault(); scrollToHash("#projects");setIsOpen(!isOpen);}} className={`${fraunces.className} block text-white hover:text-gray-300 no-underline font-semibold`}>Projects</a>
                   <button className={`${fraunces.className} items-left mt-15 btn w-full py-2 cursor-pointer px-3 text-black hover:text-gray-300 no-underline font-semibold`}
                   onClick={() => {window.location.href = "mailto:trevinop36@gmail.com";}}>
                     Get in touch
