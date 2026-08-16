@@ -44,14 +44,14 @@ export default async function Page() {
     }
 
     return (
-        <>
+        <div>
             <h1 className="mb-8">Revalidation Basics</h1>
             <Markdown content={explainer} className="mb-6" />
             <form className="mb-8" action={revalidateWiki}>
                 <SubmitButton text="Click to Revalidate" />
             </form>
             <RandomWikiArticle />
-        </>
+        </div>
     );
 }
 
