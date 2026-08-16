@@ -45,7 +45,7 @@ const Hero = ({}) => {
                         className="rounded-xl inset-0 z-0 w-full h-full object-cover object-center select-none pointer-events-none" 
                     />
                 </div>
-                <div className="w-full relative z-10 text-centerrelative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
+                <div className="w-full relative z-10 text-center z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
                     <FlipFadeText
                     words={["SOFTWARE ENGINEER", "FULLSTACK DEVELOPER", "PROBLEM SOLVER", "CYBERSECURITY ENTHUSIAST", "CLOUD ENTHUSIAST"]}
                     className={`${ebGaramond.className} glow font-light tracking-tight leading-tight text-white`}
