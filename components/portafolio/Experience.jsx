@@ -19,13 +19,17 @@ const TIMELINE_DATA = [
     peer: {
       name: "Miriam Menchaca Rodriguez", 
       position: "Z System SW Development Manager", 
-      quote: "He saved the company", 
+      quote: "Pedro was steady to work with, he asked good questions before diving in, didn't cut corners on testing even when things got busy, and had a calm, methodical way about him that made cross-team handoffs easier. Easy to trust with something once he'd looked at it.", 
       contact: "https://www.linkedin.com/in/miriam-rodriguez-menchaca/"
     },
     activities: [
       'Collaborated with the Watson Automation and Ansible Solutions Automation teams to architect, develop, and maintain enterprise backend automation workflows tailored for IBM Z mainframe environments.',
       'Engineered and executed comprehensive testing protocols for 15+ Red Hat Ansible modules within the IBM Z IMS Collection (v1.3.0), identifying and troubleshooting critical functional and dependency bugs to improve release velocity and reduce production bug occurrences by ~60%.',
       'Supported cross-functional engineering teammates by analyzing and debugging code, documenting system dependencies, and delivering technical context during onboarding to ensure team alignment'
+    ],
+    stats: [
+      ['~15+', 'Ansible modules tested.'],
+      ['~60%', 'Fewer production bugs.'],
     ],
     imageSrc: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
     reflexion: 'After an incredible internship in the Blue Program, I was offered a full time position which I felt honored to accept, this further continue some of the work I did as an Intern and got involved in new activities accoriding my new responsabilities',
@@ -38,15 +42,19 @@ const TIMELINE_DATA = [
     location: "Guadalajara · Remote",
     position: 'Software Developer',
     peer: {
-      name: "Miriam Menchaca Rodriguez", 
-      position: "Z System SW Development Manager", 
-      quote: "He saved the company", 
+      name: "An Lam", 
+      position: "DevOps Cloud Automation Software Engineer", 
+      quote: "He walked into a legacy JCL-to-Ansible migration that nobody wanted to touch and just quietly automated it. The provisioning time drop wasn't a fluke, he validated everything across staging before it ever shipped.", 
       contact: "https://www.linkedin.com/in/miriam-rodriguez-menchaca/"
     },
     activities: [
       'Spearheaded the modern migration of legacy configuration and provisioning workflows from JCL to Ansible for ECmachines, successfully automating manual operations and reducing end-to-end provisioning time by approximately 40%.',
       'Modernized a core provisioning repository by integrating a next-generation Ansible Solutions Automation library and systematically validating infrastructure behavior across dedicated staging environments.',
       'Diagnosed and documented critical usability roadblocks and functional gaps in the new automation library, pro-viding actionable feedback to optimize reliability and documentation clarity for broader team adoption.'
+    ],
+    stats: [
+      ['~40%', 'Faster provisioning time.'],
+      ['Legacy JCL', '→ Ansible migration.'],
     ],
     imageSrc: 'https://ix-marketing.imgix.net/autocompress.png?auto=format,compress&w=1946',
     reflexion: 'Well, as my first internship, I was priviliged to got into one of the biggest tech companies, I felt so lucky and I\'m grateful for the oportunity I had to grow professionaly with the guidance of such amazing people',
@@ -61,12 +69,16 @@ const TIMELINE_DATA = [
     peer: {
       name: "Karla Ibarra Ramirez", 
       position: "Monterrey Region TecFood Leader", 
-      quote: "He saved the Tec",
+      quote: "Pedro basically owned the frontend for that vendor platform end to end with around 200 vendors in the campuses, and he was the one coordinating with stakeholders directly for content. The traffic increase was real, and it was his UI work driving it.",
       contact: "https://www.linkedin.com/in/karla-ibarra-ramirez-8bba7766/"
     },
     activities: [
       'Led the UI/UX design and frontend development of an official university campus web application engineered to map, index, and organize commercial data for ~200 campus restaurant vendors across 28 Mexican states',
       'Structured and deployed highly responsive, localized content block pages for individual vendors, curating multi-media assets from stakeholder representatives to increase organic web page visits by an estimated 85%',
+    ],
+    stats: [
+      ['~200', 'Campus restaurant vendors across 28 Mexican states.'],
+      ['~85%', 'Organic web page visits.'],
     ],
     imageSrc: 'https://ix-marketing.imgix.net/bg-remove_after.png?auto=format,compress&w=1946',
     reflexion: 'While I was studying I had the opportunity to work on the development of the catering site of ITESM.',
@@ -84,10 +96,10 @@ const Experience = ({}) => {
 
   return (
     <FadeContent blur={false} duration={2000} easing="ease-out" initialOpacity={0}>
-      <div className="flex flex-col relative h-[100svh] w-full overflow-hidden items-center justify-center">
+      <div className="flex flex-col relative h-[100svh] w-full overflow-hidden items-center justify-center ">
         <div className="absolute inset-5 mt-21">
           <div className="h-full flex md:flex-row flex-col">
-            <div className="text-white md:w-[85%] md:h-full w-full h-[90%] relative overflow-y-scroll rounded-xl">
+            <div className="text-white md:w-[85%] md:h-full w-full h-[90%] relative overflow-y-scroll rounded-xl select-none">
               <div className="absolute rounded-xl left-0 top-0 bottom-0 w-full z-0 overflow-hidden">
                 <img 
                     src={selected.imageSrc}
@@ -129,13 +141,21 @@ const Experience = ({}) => {
                       ))}
                     </ul>
 
-                    <div className="md:mt-10 mt-5 w-full grid grid-cols-2 gap-2 border-1 border-white">
-                      <div className="flex items-center justify-center">
-                        asd
-                      </div>
-                      <div className="flex items-center justify-center">
-                        hjkhjk
-                      </div>
+{/* newsreader, inter, fraunces, ebGaramond, roboto, playfair */}
+                    <div className="w-full overflow-x-scroll md:mt-10 mt-5">
+                      {timelineItems.map(item => {
+                        const isActive = item.index === activeIndex;
+                        return (
+                          <div key={item.index} className={isActive ? "flex flex-wrap gap-3 items-center justify-center " : "hidden"}> 
+                            {item.stats.map((pair, statIdx) => (
+                              <div key={`${item.index}-${statIdx}`} className={`bg-black/30 rounded-xl flex-cols px-5 py-3`}>
+                                <p className={`${ebGaramond.className} italic font-black md:text-6xl text-4xl`}>{pair[0]}</p>
+                                <p className={`${newsreader.className} mt-2 text-white/50 md:text-sm text-sm`}>{pair[1]}</p>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      })}
                     </div>
                     
                     <div id="testimony" className="mt-5 border-l-2 border-blue-400 pl-4">
