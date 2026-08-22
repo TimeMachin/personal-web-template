@@ -1,7 +1,7 @@
 import FadeContent from "components/animations/fade";
 import { newsreader, inter, fraunces, ebGaramond, roboto, playfair } from "../fonts";
 import { useMemo } from 'react';
-import { Quote, ExternalLink } from 'lucide-react';
+import { Quote, ExternalLink, Code2 } from 'lucide-react';
 import SparkleButton from "components/StarGit";
 
 const PROJECTS_DATA = [
@@ -58,12 +58,12 @@ const Projects = ({}) => {
                                     <img src="/images/small_footer_2.png" fill="true" className="object-cover" sizes="(max-width: 768px) 100vw, 400px"/>
                                     <div className="absolute inset-0" style={{background: `linear-gradient(180deg, #5ac8be00 40%, #0a0a0a99 100%)`,}}/>
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <Quote size={34} style={{ color: "#5ac8be" }} strokeWidth={1.75} />
+                                        <Code2 size={34} style={{ color: "#5ac8be" }} strokeWidth={1.75} />
                                     </div>
                                 </div>
 
                                 <div className="flex items-center mt-3 select-none">
-                                    <p className={`${playfair.className} flex-1 font-black ml-5 md:text-4xl text-xl`}>{item.title}</p>
+                                    <p className={`${playfair.className} glow flex-1 font-black ml-5 md:text-4xl text-xl`}>{item.title}</p>
                                     <p className={`${ebGaramond.className} flex flex justify-end mr-5 text-[#3be5d7] rounded-xl px-2 bg-[#1a514c] md:text-base text-sm`}>{item.status}</p>
                                 </div>
 
