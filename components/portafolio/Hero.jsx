@@ -67,8 +67,8 @@ const Hero = ({}) => {
                 </div>
             </div>
             <div className="relative h-[100svh] overflow-hidden w-full flex flex-col">
-                <div className="flex-1 flex items-center justify-center px-20 ">
-                    <p className={`${newsreader.className} text-5xl text-[#f3e9e2] wrap-balance text-center overflow-hidden`}>
+                <div className="flex-1 flex items-center justify-center md:px-20 px-5">
+                    <p className={`${newsreader.className} md:text-5xl text-2xl text-[#f3e9e2] wrap-balance text-center overflow-hidden`}>
                         I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative environments where communication, precision, and analytical thinking drive impactful solutions.
                     </p>
                 </div>
@@ -80,6 +80,7 @@ const Hero = ({}) => {
                         <div className="pointer-events-none absolute left-0 top-0 h-full w-16 z-10 bg-gradient-to-r from-black/100 via-black/50 to-transparent"/>
                         <div className="pointer-events-none absolute right-0 top-0 h-full w-16 z-10 bg-gradient-to-l from-black/100 via-black/50 to-transparent"/>
                         <ScrollText className="min-w-full relative z-0" text="Welcome to my portfolio!" textFont={{ fontFamily: `${ebGaramond.className}`, fontSize: "30" }}/>
+                        <ScrollText className="md:hidden min-w-full relative z-0" text="Welcome to my portfolio!" textFont={{ fontFamily: `${ebGaramond.className}`, fontSize: "15" }}/>
                     </div>
                 </div>
             </div>

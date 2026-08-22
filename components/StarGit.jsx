@@ -1,13 +1,27 @@
 'use client'
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Gpu, Star } from 'lucide-react';
+import { ExternalLink, Star } from 'lucide-react';
+import { newsreader, inter, fraunces, ebGaramond, roboto, playfair } from "./fonts";
 
-export default function SparkleButton() {
+const COMPONENT_DEFAULTS = {
+    link: "#",
+    text: "Click", 
+    color: "#5ac8be"
+}
+
+export default function SparkleButton(props) {
   const [isHovered, setIsHovered] = useState(false);
 
+    props = { ...COMPONENT_DEFAULTS, ...props }
+    const {
+        link, 
+        text,
+        color
+    } = props
+
   return (
-    <a href="https://github.com/TimeMachin/personal-web-template" className='no-underline'>
+    <a href={link} className='no-underline'>
     <motion.button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -26,7 +40,7 @@ export default function SparkleButton() {
               transition={{ type: "spring", stiffness: 600, damping: 25 }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <Gpu className="w-4 h-4" />
+              <ExternalLink className={`w-4 h-4`} />
             </motion.div>
           ) : (
             <motion.div
@@ -37,7 +51,7 @@ export default function SparkleButton() {
               transition={{ type: "spring", stiffness: 600, damping: 25 }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <Star className="w-4 h-4 text-yellow-400" />
+              <Star className={`w-4 h-4 text-[${color}]`} />
               <motion.div
                 initial={{ opacity: 0, scale: 0, rotate: -45, y: 10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
@@ -45,7 +59,7 @@ export default function SparkleButton() {
                 transition={{ type: "spring", stiffness: 600, damping: 25, delay: 0.05 }}
                 className="absolute -top-3 -right-2"
               >
-                <svg className="w-2.5 h-2.5 text-yellow-200" viewBox="0 0 24 24" fill="currentColor">
+                <svg className={`w-2.5 h-2.5 text-[${color}]`} viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2l2.4 7.6H22l-6.2 4.5 2.4 7.6-6.2-4.5-6.2 4.5 2.4-7.6L2 9.6h7.6z" />
                 </svg>
               </motion.div>
@@ -53,7 +67,7 @@ export default function SparkleButton() {
           )}
         </AnimatePresence>
       </div>
-      <span className="font-medium tracking-tight text-[13px] ml-2.5">Star on GitHub</span>
+      <span className={`${fraunces.className} text-[${color}] font-medium tracking-tight md:text-sm text-base ml-2.5`}>{text}</span>
     </motion.button>
     </a>
   );
