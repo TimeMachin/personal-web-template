@@ -48,8 +48,8 @@ const Projects = ({}) => {
 
     return (
         <FadeContent blur={false} duration={2000} easing="ease-out" initialOpacity={0}>
-            <div className="relative h-[100svh] w-full overflow-y-scroll no-scrollbar">
-                <div className="absolute inset-5 mt-21 md:mx-5 flex flex-col items-start justify-start">
+            <div className="relative w-full overflow-hidden">
+                <div className="relative mx-5 mt-26 flex flex-col items-start justify-start md:mx-10">
                     {data.map((item) => { 
                         // newsreader, inter, fraunces, ebGaramond, roboto, playfair
                         return(

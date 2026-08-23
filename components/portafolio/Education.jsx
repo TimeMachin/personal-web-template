@@ -41,8 +41,8 @@ const Education = ({}) => {
     );
     return (
         <FadeContent blur={false} duration={2000} easing="ease-out" initialOpacity={0}>
-            <div className="relative h-[100svh] w-full overflow-y-scroll no-scrollbar">
-                <div className="select-none absolute md:inset-10 inset-5 md:mt-18 mt-21 flex flex-col items-start justify-start ">
+            <div className="relative min-h-svh w-full overflow-hidden">
+                <div className="relative mx-5 mt-25 flex flex-col items-start justify-start select-none md:mx-10 md:mt-25">
                     {data.map((item) => (
                     <div key={item.index} className="relative pl-5 w-full">
                         <span className="absolute left-[1px] top-2 h-3 w-3 rounded-full bg-[#d4a15c]" />
