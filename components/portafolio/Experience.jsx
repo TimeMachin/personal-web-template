@@ -99,7 +99,7 @@ const Experience = ({}) => {
       <div className="flex flex-col relative h-[100svh] w-full overflow-hidden items-center justify-center ">
         <div className="absolute inset-5 mt-21">
           <div className="h-full flex md:flex-row flex-col">
-            <div className="text-white md:w-[85%] md:h-full w-full h-[90%] relative overflow-y-scroll rounded-xl select-none">
+            <div className="text-white md:w-[85%] md:h-full w-full h-[90%] relative overflow-y-scroll no-scrollbar rounded-xl select-none">
               <div className="absolute rounded-xl left-0 top-0 bottom-0 w-full z-0 overflow-hidden">
                 <img 
                     src={selected.imageSrc}
@@ -142,7 +142,7 @@ const Experience = ({}) => {
                     </ul>
 
 {/* newsreader, inter, fraunces, ebGaramond, roboto, playfair */}
-                    <div className="w-full overflow-x-scroll md:mt-10 mt-5">
+                    <div className="w-full overflow-x-scroll no-scrollbar md:mt-10 mt-5">
                       {timelineItems.map(item => {
                         const isActive = item.index === activeIndex;
                         return (
