@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Alert } from './alert';
-import { Card } from './card';
 
 export function FeedbackForm() {
     const [status, setStatus] = useState(null);
@@ -34,7 +33,6 @@ export function FeedbackForm() {
 
     return (
         <div className="w-full md:max-w-md">
-            <Card title="Leave Feedback">
                 <form name="feedback" onSubmit={handleFormSubmit} className="flex flex-col gap-3 align-center">
                     <input type="hidden" name="form-name" value="feedback" />
                     <input name="name" type="text" placeholder="Name" required className="input" />
@@ -46,7 +44,6 @@ export function FeedbackForm() {
                     {status === 'ok' && <Alert type="success">Submitted!</Alert>}
                     {status === 'error' && <Alert type="error">{error}</Alert>}
                 </form>
-            </Card>
         </div>
     );
 }
