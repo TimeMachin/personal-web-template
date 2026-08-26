@@ -55,7 +55,7 @@ export default async function RootLayout({ children }) {
                 </section>
 
                 {/* Seccion de contenido de proyectos */}
-                <section id='projects'>
+                <section id='projects' className='text-white'>
                     <Projects></Projects>
                 </section>
 
@@ -65,7 +65,7 @@ export default async function RootLayout({ children }) {
                 </section>
 
                 {/* Seccion de contenido de educacion */}
-                <section id='education'>
+                <section id='education' className='text-white'>
                     <Education></Education>
                 </section>
 

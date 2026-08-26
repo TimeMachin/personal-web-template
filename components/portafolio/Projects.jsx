@@ -86,7 +86,7 @@ const Projects = ({}) => {
                                 <div className="h-px bg-gray-300 my-5" />
                                 <span className="flex select-none">
                                     <Quote className="shrink-0 w-4 h-4 text-[#5ac8be]"/>
-                                    <p className={`${fraunces.className} break-words whitespace-normal md:text-2xl text-xl pl-2`}>{item.thought}</p>
+                                    <p className={`${fraunces.className} break-words md:text-2xl text-xl pl-2 text-white`}>{item.thought}</p>
                                 </span>
 
                                 <span className="flex select-none mt-5 ml-5">
