@@ -1,9 +1,10 @@
-import Framer from 'components/Framer'
-import FadeContent from 'components/animations/fade';
+// Import Fonts and icons
 import { newsreader, inter, fraunces, ebGaramond, playfair } from "../fonts";
-import SparkleButton from 'components/StarGit';
-import { useMemo } from 'react';
 import { MapPin, Quote } from 'lucide-react';
+
+// Import of animations
+import FadeContent from 'components/animations/fade';
+import { useMemo } from 'react';
 
 const EDUCATION_DATA = [
     {
@@ -17,7 +18,7 @@ const EDUCATION_DATA = [
             description: "Built with Python3 to detect anomalous system behavior from Windows security logs."
         },
         relevantCourses: ["Ethical Hacking", "Forensyc Analysis", "Reverse Engineering", "Smartphone Security"],
-        reflexion: "I finished the TFM YAAAAAAAAAY!!!!!!!"
+        reflexion: "Starting new studies is always difficult, coupled with that, the opportunity to study a master's degree came to be in another country, so it was a double challenge that I decided to face with this master's degree. During university, I saw a little bit of cybersecurity and being working at IBM I was able to get a small glimpse of the importance of this area, when I started the master's classes I felt pressured, although I recognized some things, I did not feel very prepared to face them, but little by little everything made sense; Forensics, ethical hacking, reverse engineering, everything entailed a challenge that I am proud to have overcome, but without a doubt the biggest challenge was the final project of the master's degree (TFM), among the various topics that I could have chosen, I chose the one that combined my role as a software developer with this master's degree in cybersecurity, a program that analyzed Windows security events, despite what it might seem, the development was not the most difficult, but the research, metrics and tools, in any case, I was up to the challenge, this also with advice from a professional from Deloitte"
     }, 
     {
         school: "ITESM", 
@@ -30,7 +31,7 @@ const EDUCATION_DATA = [
             studenSociaties: ["SOCTE", "Japanese Culture Club"]
         },
         relevantCourses: ["Device Interconnection", "Network & Software Systems Security Integration", "Wide Area Networks (WAN) & Distributed Services Implementation"],
-        reflexion: "SOMOS TEC, nah ya en serio, fue un gran hito para mi el haber entrado a esta universidad tan prestigiosa, y el prestigio no se queda solamente en el nombre, las clases y profesores estuvieron a la altura, alentandome a dar lo mejor de mi academicamente"
+        reflexion: "After a long preparation to obtain financial support to be able to study at this institution, I got a significant enough percentage of scholarship to be able to carry out my university studies here, it is one of the greatest achievements I have achieved in my life. In my time in this institute I was able to learn and develop critical thinking necessary for the professional life of an engineer, I had the opportunity to do various extracurricular activities, from sports to cultural, I met incredible people, both personally and professionally, without a doubt the institution offers the highest academic level in Mexico along with a few other universities, they encouraged me to give the best of me."
     }
 ]
 

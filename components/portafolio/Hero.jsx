@@ -1,15 +1,13 @@
 'use client'
 
-// Import de fuentes
+// Import fonts
 import { newsreader, inter, fraunces, ebGaramond } from "../fonts";
 
-// Import de animaciones
+// Import animations
 import BlurText from "components/animations/BlurTextFall";
 import FadeContent from "components/animations/fade";
 import FlipFadeText from "components/animations/FlipText";
 import ScrollText from "components/animations/ScrollText";
-
-// Otras librerias
 import { useState, useEffect } from "react";
 
 // APIS

@@ -1,7 +1,12 @@
-import FadeContent from "components/animations/fade";
+// Import fonts and icons
 import { newsreader, inter, fraunces, ebGaramond, roboto, playfair } from "../fonts";
-import { useMemo } from 'react';
 import { Quote, ExternalLink, Code2 } from 'lucide-react';
+
+// Import animations
+import FadeContent from "components/animations/fade";
+import { useMemo } from 'react';
+
+// Import components
 import SparkleButton from "components/StarGit";
 
 const PROJECTS_DATA = [
@@ -24,7 +29,7 @@ const PROJECTS_DATA = [
         status: "Open Source", 
         link: "https://github.com/ansible-collections/ibm_zos_ims.git",
         linkPrev: "View On GitHub",
-        thought: "I contributed",
+        thought: "As a continuation of my work as an intern of the IBM Blue Program, I collaborated with engineers from different backgrounds with many more years of experience than me, I enjoyed working with them since I was able to learn from each of the experiences in which I had the privilege of participating, without a doubt what I take away from this project is the experience of the people with whom I collaborated.",
         image: "/images/small_footer_2.png"
     }, 
     {
@@ -35,7 +40,7 @@ const PROJECTS_DATA = [
         status: "Live", 
         link: "https://github.com/TimeMachin/personal-web-template.git",
         linkPrev: "View Code",
-        thought: "This is where you are",
+        thought: "This is where you are, I hope you like the design, is the main thing I was concerned about, make it look fancy :) But yeah, after some consideration I decided to develope the site based on the data on my CV, but in a better presentation, also, here I have the chance to write things loke this, a better insight on my professional experience... Also it was fun. please hire me :)",
         image: "/images/small_footer_2.png"
     }
 ];

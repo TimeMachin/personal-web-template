@@ -1,9 +1,14 @@
 'use client';
-import FadeContent from "components/animations/fade";
-import BlurText from "components/animations/BlurTextFall";
-import Contact from "components/Contact";
-import { FadeIn } from "components/animations/FadeIn";
+// Import fonts and icons
 import { newsreader, inter, fraunces, ebGaramond, roboto, playfair } from "../fonts";
+
+// Import animations
+import FadeContent from "components/animations/fade";
+import { FadeIn } from "components/animations/FadeIn";
+
+// Import components
+import Contact from "components/Contact";
+import BlurText from "components/animations/BlurTextFall";
 import GetInTouchButton from "components/GetInTouch";
 
 const Footer = ({}) => {

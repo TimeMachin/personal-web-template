@@ -1,10 +1,10 @@
 'use client'
-import TextType from "components/animations/textType";
-import SpotlightCard from "components/SpotlightCard";
-import { FadeIn } from "components/animations/FadeIn";
+// Import animations
 import FadeContent from "components/animations/fade";
-import React, { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import React, { useMemo, useState } from 'react';
+
+// Import fonts and icons
 import { newsreader, inter, fraunces, ebGaramond, roboto, playfair } from "../fonts";
 import { MapPin, CircleDot } from 'lucide-react';
 

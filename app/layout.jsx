@@ -9,13 +9,9 @@ import DotGrid from 'components/backgrounds/DotGrid';
 import LetterGlitch from '../components/backgrounds/LetterGlitch';
 import Waves from 'components/backgrounds/Waves';
 
-{/* Imports de animaciones */}
-import FadeContent from 'components/animations/fade';
-
 {/* Imports de componentes */}
 import Navbar from 'components/navbar';
 import GradualBlurMemo from 'components/animations/GradualBlur ';
-import SpotlightCard from 'components/SpotlightCard';
 
 {/* Imports de contenido */}
 import Hero from 'components/portafolio/Hero';
@@ -59,7 +55,7 @@ export default async function RootLayout({ children }) {
                 </section>
 
                 {/* Seccion de contenido de proyectos */}
-                <section id='projects' className='text-white'>
+                <section id='projects'>
                     <Projects></Projects>
                 </section>
 
@@ -69,7 +65,7 @@ export default async function RootLayout({ children }) {
                 </section>
 
                 {/* Seccion de contenido de educacion */}
-                <section id='education' className='text-white'>
+                <section id='education'>
                     <Education></Education>
                 </section>
 
