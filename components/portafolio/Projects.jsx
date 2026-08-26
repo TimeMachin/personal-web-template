@@ -40,7 +40,7 @@ const PROJECTS_DATA = [
         status: "Live", 
         link: "https://github.com/TimeMachin/personal-web-template.git",
         linkPrev: "View Code",
-        thought: "This is where you are, I hope you like the design, is the main thing I was concerned about, make it look fancy :) But yeah, after some consideration I decided to develope the site based on the data on my CV, but in a better presentation, also, here I have the chance to write things loke this, a better insight on my professional experience... Also it was fun. please hire me :)",
+        thought: "This is where you are, I hope you like the design, is the main thing I was concerned about, make it look fancy :) But yeah, after some consideration I decided to develope the site based on the data on my CV, but in a better presentation, also, here I have the chance to write things loke this, a better insight on my professional experience... Also it was fun. please hire me :) or at least reply to my application, I really hate when people don't reply, it's just 5 minutes tops, so please, don't be rude",
         image: "/images/small_footer_2.png"
     }
 ];
