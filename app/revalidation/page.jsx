@@ -1,5 +1,4 @@
 import { revalidateTag } from 'next/cache';
-import { Card } from 'components/card';
 import { Markdown } from 'components/markdown';
 import { SubmitButton } from 'components/submit-button';
 
@@ -67,13 +66,13 @@ async function RandomWikiArticle() {
     }
 
     return (
-        <Card className="max-w-2xl">
+        <div>
             <h3 className="text-2xl text-neutral-900">{content.title}</h3>
             <div className="text-lg font-bold">{content.description}</div>
             <p className="italic">{extract}</p>
             <a target="_blank" rel="noopener noreferrer" href={content.content_urls.desktop.page}>
                 From Wikipedia
             </a>
-        </Card>
+        </div>
     );
 }
