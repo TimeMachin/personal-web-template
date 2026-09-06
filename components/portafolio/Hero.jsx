@@ -67,7 +67,7 @@ const Hero = ({}) => {
             <div className="relative h-[100svh] overflow-hidden w-full flex flex-col">
                 <div className="flex-1 flex items-center justify-center md:px-20 px-5">
                     <p className={`${newsreader.className} md:text-5xl text-2xl text-[#f3e9e2] wrap-balance text-center overflow-hidden`}>
-                        I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM of about 2 years on backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative environments where communication, precision, and analytical thinking drive impactful solutions.
+                        I am a computer science and cybersecurity master graduate with hands-on experience in software development at IBM for about 2 years on backend and frontend. My professional background combines a solid foundation in programming, automation, and systems integration with a growing specialization in secure development, ethical hacking, forensic analysis, and reverse engineering. I thrive in collaborative environments where communication, precision, and analytical thinking drive impactful solutions.
                     </p>
                 </div>
                 <div className="flex items-center" >
