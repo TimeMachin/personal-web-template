@@ -39,7 +39,7 @@ export default function GetQuote() {
     };
   }, []);
 
-  const YE = true; // is Kanye West quote? (true) or ZenQuotes (false)
+  const YE = false; // is Kanye West quote? (true) or ZenQuotes (false)
 
   if (error) return <BlurText text="In the end, everything will be alright and if it's not alright, it's not the end" delay={100} animateBy="words" direction="bottom" className={`${ebGaramond.className} text-xl font-light tracking-tight leading-tight text-white text-balance md:text-balance`}/>;
   if (!quote) return <FadeContent blur={false} duration={1000} easing="ease-out" initialOpacity={0}><LoadingDots></LoadingDots></FadeContent>
